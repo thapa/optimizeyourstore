@@ -38,60 +38,62 @@ export default function Header() {
     return null; // Prevent SSR mismatch
   }
 
-  const txt = isDark ? 'text-white' : 'text-black';
-  const txtMuted = isDark ? 'text-white/80' : 'text-black/70';
+  const txt = isDark ? 'text-white' : 'text-[#11100F]';
+  const txtMuted = isDark ? 'text-white/80' : 'text-[#11100F]/70';
   const hoverBg = isDark ? 'hover:bg-white/10 hover:text-white' : 'hover:bg-black/8 hover:text-black';
-  const activePill = isDark
-    ? 'bg-white/30 text-white border-white/20'
-    : 'bg-black/10 text-black border-black/10';
-  const navPillBg = scrolled
-    ? isDark
-      ? 'bg-white/10 border border-white/20 backdrop-blur-xl shadow-[0_4px_24px_rgba(0,0,0,0.1)]'
-      : 'bg-black/5 border border-black/10 backdrop-blur-xl shadow-[0_4px_24px_rgba(0,0,0,0.06)]'
-    : 'bg-transparent border border-transparent backdrop-blur-none shadow-none';
   const decoDot = isDark ? 'bg-white/70' : 'bg-black/30';
 
   return (
     <header
-      className={`fixed top-0 left-1/2 -translate-x-1/2 z-50 w-full flex items-center justify-between
+      className={`fixed top-0 left-1/2 -translate-x-1/2 z-50 flex items-center justify-between transition-all duration-500 ease-in-out
         ${scrolled
-          ? 'max-w-384 px-8 py-6 bg-transparent border-transparent backdrop-blur-none shadow-none transition-[max-width,padding,margin] duration-500 ease-in-out'
-          : 'max-w-[1340px] px-6 py-3 mt-6 bg-white/10 border border-white/20 backdrop-blur-xl rounded-full shadow-[0_10px_30px_rgba(116,49,58,0.15),inset_0_2px_4px_rgba(255,255,255,0.1)] transition-all duration-500 ease-in-out'
+          ? `max-w-full w-full px-6 md:px-8 py-4 mt-0 rounded-none border-b shadow-[0_4px_32px_rgba(0,0,0,0.35)] backdrop-blur-2xl
+             ${isDark ? 'bg-[#0E0B0D]/90 border-white/8 text-white' : 'bg-[#F7F5F2]/90 border-black/8 text-[#11100F]'}`
+          : `w-full max-w-full px-6 py-4.5 mt-0 border-none rounded-none bg-transparent text-white
+             md:max-w-[1340px] md:w-[calc(100%-48px)] md:px-6 md:py-3 md:mt-6 md:border md:rounded-full md:backdrop-blur-xl md:shadow-[0_10px_30px_rgba(116,49,58,0.15),inset_0_2px_4px_rgba(255,255,255,0.1)]
+             ${isDark ? 'md:bg-white/10 md:border-white/20 md:text-white' : 'md:bg-black/5 md:border-black/10 md:text-[#11100F]'}`
         }
       `}
     >
       {/* Logo */}
       <div className="flex items-center relative">
-        <span className={`text-[22px] font-bold tracking-tight leading-none mt-1 transition-colors duration-300 ${txt}`}>[AGENCY NAME]</span>
+        <Link href="#" className={`text-[18px] md:text-[22px] font-extrabold tracking-tight leading-none mt-1 transition-colors duration-300 ${txt}`}>
+          Convertiq<span className="font-light">X</span><span className="text-[#FF707C]">.</span>
+        </Link>
       </div>
 
       {/* Center Nav */}
-      <nav className={`flex items-center gap-1.5 p-1.25 rounded-full transition-all duration-500 ease-in-out ${navPillBg}`}>
-        <Link href="#" className={`px-6 py-1.75 rounded-full font-semibold text-[14px] transition-all duration-300 border shadow-md ${activePill}`}>
-          Work
-        </Link>
-        <Link href="#" className={`px-6 py-1.75 rounded-full font-medium text-[14px] transition-all duration-300 ${txtMuted} ${hoverBg}`}>
+      <nav className="hidden md:flex items-center gap-1.5 p-1.25 rounded-full transition-all duration-500 ease-in-out bg-transparent border border-transparent backdrop-blur-none shadow-none">
+        <Link href="#services" className={`px-6 py-1.75 rounded-full font-medium text-[14px] transition-all duration-300 ${txtMuted} ${hoverBg}`}>
           Services
         </Link>
-        <Link href="#" className={`px-6 py-1.75 rounded-full font-medium text-[14px] transition-all duration-300 ${txtMuted} ${hoverBg}`}>
-          Process
+        <Link href="#pricing" className={`px-6 py-1.75 rounded-full font-medium text-[14px] transition-all duration-300 ${txtMuted} ${hoverBg}`}>
+          Pricing
         </Link>
-        <Link href="#" className={`px-6 py-1.75 rounded-full font-medium text-[14px] transition-all duration-300 ${txtMuted} ${hoverBg}`}>
-          About
+        <Link href="#results" className={`px-6 py-1.75 rounded-full font-medium text-[14px] transition-all duration-300 ${txtMuted} ${hoverBg}`}>
+          Results
+        </Link>
+        <Link href="#faq" className={`px-6 py-1.75 rounded-full font-medium text-[14px] transition-all duration-300 ${txtMuted} ${hoverBg}`}>
+          FAQ
         </Link>
       </nav>
 
       {/* Right Controls */}
       <div className="flex items-center gap-3">
         <div className="relative ml-2">
-          <button className={`px-5 py-2.5 rounded-full text-[14px] font-semibold transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-[1.04] active:scale-[0.98] shadow-sm
-            ${isDark 
-              ? 'bg-[#FF707C] text-white' 
-              : 'bg-[#ff5c6a] text-white'
-            }
-          `}>
-            Book a Call
-          </button>
+          <a
+            href="https://calendar.app.google/A3gnRV3q6xhCi2oR8"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`px-4 py-2 md:px-5 md:py-2.5 rounded-full text-[12px] md:text-[14px] font-semibold transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-[1.04] active:scale-[0.98] shadow-sm block
+              ${isDark 
+                ? 'bg-[#FF707C] text-white' 
+                : 'bg-[#ff5c6a] text-white'
+              }
+            `}
+          >
+            Book Free Call
+          </a>
           <div className={`w-1 h-1 rounded-[1px] absolute -bottom-1 -right-1 transition-colors duration-300 ${decoDot}`}></div>
         </div>
       </div>

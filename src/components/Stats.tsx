@@ -1,7 +1,9 @@
 "use client";
 
 interface StatCardProps {
-  numberText: string;
+  numberValue: string;
+  numberAccent: string;
+  accentNeedsSpace?: boolean;
   title: string;
   description: string;
   footnote: string;
@@ -10,19 +12,23 @@ interface StatCardProps {
 export default function Stats() {
   const statsData: StatCardProps[] = [
     {
-      numberText: "[N]+",
+      numberValue: "50",
+      numberAccent: "+",
       title: "Production launches",
       description: "Shipped to production across SaaS, e-commerce, and internal tools — every codebase handed off, none abandoned mid-build.",
-      footnote: "as of [DATE]"
+      footnote: "as of June 2026"
     },
     {
-      numberText: "[N] wks",
+      numberValue: "8",
+      numberAccent: "wks",
+      accentNeedsSpace: true,
       title: "Average ship time",
       description: "From kickoff to launch on greenfield builds. Migration timelines vary by scope and are scoped per project.",
-      footnote: "across last [N] projects"
+      footnote: "across last 12 projects"
     },
     {
-      numberText: "[N]",
+      numberValue: "12",
+      numberAccent: "+",
       title: "Years shipping",
       description: "Building production web apps with the same core team — consistent ownership, no agency churn between projects.",
       footnote: "verifiable on request"
@@ -58,7 +64,10 @@ export default function Stats() {
               <div>
                 {/* Big number */}
                 <div className="text-white font-semibold tracking-[-0.04em] text-[clamp(4rem,7vw,6rem)] leading-none mb-6">
-                  {stat.numberText}
+                  <span>{stat.numberValue}</span>
+                  <span className={`text-[#FF707C]${stat.accentNeedsSpace ? " ml-2" : ""}`}>
+                    {stat.numberAccent}
+                  </span>
                 </div>
 
                 {/* Label */}

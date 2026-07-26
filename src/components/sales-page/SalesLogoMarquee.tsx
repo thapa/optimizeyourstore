@@ -7,8 +7,7 @@ const categories = [
   "Supplements"
 ];
 
-export default function LogoMarquee() {
-  // Duplicate categories to ensure marquee track is wide enough to scroll seamlessly
+export default function SalesLogoMarquee() {
   const duplicatedCategories = [
     ...categories,
     ...categories,

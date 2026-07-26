@@ -46,7 +46,7 @@ export default function CTA() {
             <div className="relative w-full md:w-auto flex justify-center">
               <a 
                 href="#"
-                className="inline-flex items-center justify-center bg-[#FF707C] text-white px-7 py-3.5 rounded-full text-[15px] font-semibold tracking-wide transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-[1.04] active:scale-[0.98] focus:outline-hidden focus-visible:ring-2 focus-visible:ring-[#FF707C] focus-visible:ring-offset-2 focus-visible:ring-offset-[#1A0E10] w-full md:w-auto text-center shadow-sm"
+                className="inline-flex items-center justify-center bg-white text-[#11100F] px-7 py-3.5 rounded-full text-[15px] font-semibold tracking-wide transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-[1.04] hover:bg-[#F7F5F2] active:scale-[0.98] focus:outline-hidden focus-visible:ring-2 focus-visible:ring-[#FF707C] focus-visible:ring-offset-2 focus-visible:ring-offset-[#1A0E10] w-full md:w-auto text-center shadow-sm"
               >
                 Book an intro call &rarr;
               </a>
@@ -56,7 +56,7 @@ export default function CTA() {
             {/* Secondary CTA button */}
             <div className="relative group w-full md:w-auto flex justify-center">
               <a 
-                href="mailto:hello@[your-domain].com"
+                href="mailto:hello@convertiqx.com"
                 className="inline-flex items-center justify-center bg-transparent border border-white/25 text-white px-7 py-3.5 rounded-full text-[15px] font-medium tracking-wide transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:border-white/50 hover:scale-[1.02] active:scale-[0.98] focus:outline-hidden focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:ring-offset-2 focus-visible:ring-offset-[#1A0E10] w-full md:w-auto text-center"
               >
                 Send us a brief

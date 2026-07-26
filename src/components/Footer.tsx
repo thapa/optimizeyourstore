@@ -104,14 +104,13 @@ export default function Footer() {
               </span>
               <div className="flex flex-col gap-y-3.5">
                 <a 
-                  href="mailto:[EMAIL]" 
+                  href="mailto:hello@convertiqx.com" 
                   className="text-white hover:text-white/65 text-[14px] font-medium transition-colors duration-200 font-sans"
                 >
-                  [EMAIL]
+                  hello@convertiqx.com
                 </a>
                 <p className="text-white/65 text-[14px] leading-relaxed font-sans">
-                  [ADDRESS]<br />
-                  [CITY], [REGION]
+                  Shopify Plus Conversion Rate Optimization Specialists
                 </p>
               </div>
             </div>
@@ -120,7 +119,9 @@ export default function Footer() {
             <div className="flex flex-row items-center gap-3 pt-2">
               {/* LinkedIn */}
               <a 
-                href="#" 
+                href="https://www.linkedin.com/in/arun-kumar786/" 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-8 h-8 flex items-center justify-center border border-white/12 rounded-full text-white/65 hover:text-white hover:border-white/25 transition-all duration-200" 
                 aria-label="LinkedIn"
               >
@@ -142,7 +143,9 @@ export default function Footer() {
 
               {/* X / Twitter */}
               <a 
-                href="#" 
+                href="https://x.com/iam_arun06" 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-8 h-8 flex items-center justify-center border border-white/12 rounded-full text-white/65 hover:text-white hover:border-white/25 transition-all duration-200" 
                 aria-label="X"
               >
@@ -163,15 +166,14 @@ export default function Footer() {
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
             {/* Left Copyright */}
             <span className="text-white/65 text-[13px] font-sans">
-              © 2026 [AGENCY NAME]
+              © 2026 ConvertiqX. All rights reserved.
             </span>
             
             {/* Right Legal Links */}
             <div className="flex flex-row items-center gap-7">
               {[
-                { name: "Privacy", href: "#" },
-                { name: "Terms", href: "#" },
-                { name: "Cookies", href: "#" }
+                { name: "Privacy Policy", href: "/privacy" },
+                { name: "Terms of Service", href: "#" }
               ].map((link) => (
                 <a 
                   key={link.name} 

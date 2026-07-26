@@ -62,7 +62,7 @@ function AnimatedCounter({
   );
 }
 
-export default function Hero() {
+export default function SalesHero() {
   const heroCardRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -138,7 +138,7 @@ export default function Hero() {
               >
                 Find My Revenue Leaks
                 <svg className="transition-transform duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)] group-hover:translate-x-1" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                  <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </a>
               <div className="absolute -bottom-1 -right-1 h-1 w-1 rounded-[1px] bg-white/70 hidden sm:block" />

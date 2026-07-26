@@ -5,6 +5,7 @@ import Services from '@/components/Services';
 import Stats from '@/components/Stats';
 import Method from '@/components/Method';
 import Reviews from '@/components/Reviews';
+import Pricing from '@/components/Pricing';
 import Capabilities from '@/components/Capabilities';
 import CTA from '@/components/CTA';
 import Footer from '@/components/Footer';
@@ -21,6 +22,7 @@ export default function Home() {
       <Method />
       <Stats />
       <Reviews />
+      <Pricing />
       
       <CTA />
       <Footer />

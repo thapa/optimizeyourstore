@@ -3,8 +3,27 @@ import './globals.css';
 import SmoothScroll from '@/components/SmoothScroll';
 
 export const metadata: Metadata = {
-  title: '[AGENCY NAME] — Production Web Apps for Founders and Growth Teams',
-  description: '[AGENCY NAME] builds high-performance Next.js, Shopify Plus, and design-system-driven web applications for founders and growth teams, shipping in weeks, not quarters.',
+  metadataBase: new URL('https://convertiqx.com'),
+  title: 'ConvertiqX — Production Web Apps for Founders and Growth Teams',
+  description: 'ConvertiqX builds high-performance Next.js, Shopify Plus, and design-system-driven web applications for founders and growth teams, shipping in weeks, not quarters.',
+  openGraph: {
+    title: 'ConvertiqX — Production Web Apps for Founders and Growth Teams',
+    description: 'ConvertiqX builds high-performance Next.js, Shopify Plus, and design-system-driven web applications for founders and growth teams, shipping in weeks, not quarters.',
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'ConvertiqX — Production Web Apps for Founders and Growth Teams',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'ConvertiqX — Production Web Apps for Founders and Growth Teams',
+    description: 'ConvertiqX builds high-performance Next.js, Shopify Plus, and design-system-driven web applications for founders and growth teams, shipping in weeks, not quarters.',
+    images: ['/og-image.png'],
+  },
 };
 
 export default function RootLayout({
