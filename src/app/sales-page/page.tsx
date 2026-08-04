@@ -17,6 +17,10 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://convertiqx.com'),
   title: 'ConvertiqX — CRO & Ecommerce Growth Strategy',
   description: 'We find every conversion leak in your Shopify store and fix it. Real test data. Real results.',
+  // This route serves the same content as `/`, which is now canonical.
+  alternates: {
+    canonical: '/',
+  },
   openGraph: {
     title: 'ConvertiqX — CRO & A/B Testing for Shopify Brands',
     description: 'We find every conversion leak in your Shopify store and fix it. Real test data. Real results.',

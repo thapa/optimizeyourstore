@@ -6,21 +6,32 @@
 
 ---
 
-## Sections (page order)
+## Routes
 
-| # | Component file | Section name | Theme | Status |
-|---|---------------|--------------|-------|--------|
-| 1 | `Hero.tsx` | Hero | dark | Built — split layout and headlines updated from sales-page |
-| 2 | `LogoMarquee.tsx` | Trusted By | dark | Built — scrolling category names trust bar matching sales-page.html layout |
-| 3 | `Services.tsx` | Revenue Problem | light | Built — 2x2 grid of conversion leakage cards matching sales-page.html |
-| 4 | `Capabilities.tsx` | What we build | dark-surface `#1A0E10` | Built — horizontal accordion, 4 panels |
-| 5 | `Method.tsx` | Our method | light | Built — sticky left column + 4 numbered timeline steps |
-| 6 | `Stats.tsx` | By the numbers | dark | Built — 3 stat cards, `[N]` placeholders |
-| 7 | `Reviews.tsx` | Client feedback | light | Built — Swiper carousel, 3 visible |
-| 8 | `CTA.tsx` | Let's talk | dark-surface | Built — text-only, radial bleed |
-| 9 | `Footer.tsx` | Footer | dark | Built |
+| Route | Renders | Canonical |
+|-------|---------|-----------|
+| `/` | The 12 `sales-page/` components (see table at the bottom) | `/` — self |
+| `/sales` | Same 12 components | → `/` |
+| `/sales-page` | Same 12 components | → `/` |
+| `/privacy` | Privacy Policy | — |
 
-Section eyebrow labels (`01 — TRUSTED BY`, `02 — HOW WE WORK`, …) appear on every section except the Hero.
+**As of 2026-08-04 the sales page IS the homepage.** `src/app/page.tsx` renders the
+same composition as `/sales`; verified byte-for-byte identical rendered text, differing
+only by the `og:url` meta tag. All three routes emit
+`<link rel="canonical" href="https://convertiqx.com"/>` so the duplicates don't compete
+in search.
+
+### Orphaned homepage components (on disk, rendered by nothing)
+
+The previous bespoke homepage composition is no longer referenced by any route. These
+files still exist under `src/components/` and are **not** imported anywhere:
+
+`Hero.tsx` · `LogoMarquee.tsx` · `Services.tsx` · `Capabilities.tsx` · `Method.tsx` ·
+`Stats.tsx` · `Reviews.tsx` · `Pricing.tsx` · `CTA.tsx` · `Footer.tsx`
+
+They were left in place rather than deleted. The old `page.tsx` that composed them is
+recoverable from commit `783bd2d`. `SalesLogoMarquee.tsx` is likewise unreferenced.
+`Header.tsx` and `SmoothScroll.tsx` are still live.
 
 ---
 
@@ -30,8 +41,22 @@ Real copy, numbers, testimonials, and client identity population. Use `[AGENCY N
 
 ---
 
+## Abandoned: Hallmark Redesign
+
+The Hallmark redesign of the sales page was reverted on 2026-08-04 and **is not
+wanted**. It was never committed. The current `sales-page/` components are the
+pre-redesign versions, and that is intentional — do not "restore" them.
+
+A local-only `git stash` entry (`stash@{0}`) still holds that work. It exists on one
+machine, is not on the remote, and can be discarded at any time with
+`git stash drop stash@{0}`.
+
+---
+
 ## Recent Changes
 
+- **2026-08-04 — Sales page promoted to homepage.** `src/app/page.tsx` now renders the 12 `sales-page/` components with the CRO metadata; `alternates.canonical` added to all three routes pointing at `/`. The 10 old homepage components are orphaned on disk, not deleted. `npm run build` passes, 5 static routes.
+- **2026-08-04 — Hallmark redesign reverted to `stash@{0}`, not committed.** Working tree returned to `783bd2d` (== `origin/master`). See *Stashed Work* above for recovery commands. Tables below are the pre-redesign state.
 - Configured OpenGraph and Twitter card metadata for `/`, `/sales`, and `/sales-page` routes (including social share screenshot preview under `/public/og-image.png`).
 - Set `metadataBase: new URL('https://convertiqx.com')` to support absolute URL resolution for social sharing.
 - Created a fully styled, compliant Privacy Policy page route at `/privacy` and linked it in both homepage and sales page footers.
@@ -41,19 +66,10 @@ Real copy, numbers, testimonials, and client identity population. Use `[AGENCY N
 - Updated final CTA copy and testimonials' brand/ad spend details in `sales-page.html`.
 - Verified compilation and visual alignment of `/sales` page with the updated copy.
 - Created duplicate sales route (/sales-page and /sales) with isolated CRO components under src/components/sales-page/ matching layout, spacings, and typography colors.
-- Replaced the Services component with a dark-themed 'The Revenue Problem' section displaying a 2x2 grid of cards describing conversion blockers.
-- Updated `LogoMarquee.tsx` to display horizontal infinite text categories marquee with a static "Brands we've grown" side label and a vertical divider.
-- H1 responsive font size clamp adjusted for mobile devices to match salespage line wrapping.
-- Mobile navigation links hidden and padding/widths aligned to prevent layout breakage.
-- Hero H1 text-gradient styling and container width adjusted to fix premature text wraps.
-- Navigation Header background transitions and Hero heading format updated.
-- `Header.tsx` and `Hero.tsx` updated with the new `OptimizeYourStore.` logo, headlines, and split layout from sales-page.html.
-- `Hero.tsx` and `LogoMarquee.tsx` extracted from `page.tsx` into standalone components.
-- Page component order updated: Services → Capabilities → Method → Stats → Reviews → CTA → Footer.
 
 ---
 
-## Sales Page Route (/sales-page & /sales) Sections
+## Sales Page Sections (rendered by `/`, `/sales`, and `/sales-page`)
 
 | # | Component file | Section name | Theme | Status |
 |---|---------------|--------------|-------|--------|
