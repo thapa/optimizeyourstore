@@ -1,8 +1,10 @@
 "use client";
 
 import GrainOverlay from "./ui/GrainOverlay";
+import { useModal } from "@/context/ModalContext";
 
 export default function CTA() {
+  const { openModal } = useModal();
   return (
     <section 
       data-nav-theme="dark"
@@ -44,12 +46,13 @@ export default function CTA() {
           <div className="flex flex-col md:flex-row items-center justify-center gap-3 md:gap-4 w-full">
             {/* Primary CTA button */}
             <div className="relative w-full md:w-auto flex justify-center">
-              <a 
-                href="#"
-                className="inline-flex items-center justify-center bg-white text-[#11100F] px-7 py-3.5 rounded-full text-[15px] font-semibold tracking-wide transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-[1.04] hover:bg-[#F7F5F2] active:scale-[0.98] focus:outline-hidden focus-visible:ring-2 focus-visible:ring-[#FF707C] focus-visible:ring-offset-2 focus-visible:ring-offset-[#1A0E10] w-full md:w-auto text-center shadow-sm"
+              <button 
+                type="button"
+                onClick={openModal}
+                className="inline-flex items-center justify-center bg-white text-[#11100F] px-7 py-3.5 rounded-full text-[15px] font-semibold tracking-wide transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-[1.04] hover:bg-[#F7F5F2] active:scale-[0.98] focus:outline-hidden focus-visible:ring-2 focus-visible:ring-[#FF707C] focus-visible:ring-offset-2 focus-visible:ring-offset-[#1A0E10] w-full md:w-auto text-center shadow-sm cursor-pointer"
               >
                 Book an intro call &rarr;
-              </a>
+              </button>
               <div className="w-1 h-1 rounded-[1px] absolute -bottom-1 -right-1 bg-white/70"></div>
             </div>
 

@@ -1,3 +1,7 @@
+'use client';
+
+import { useModal } from "@/context/ModalContext";
+
 interface PricingPackage {
   name: string;
   pricingModel: string;
@@ -43,38 +47,40 @@ const packages: PricingPackage[] = [
       "Stabilization plan for the first 30 days",
     ],
     ctaLabel: "Talk through a migration",
-    badge: "Most common",
-    featured: true,
   },
   {
-    name: "Embedded Retainer",
-    pricingModel: "Monthly",
-    pricingSuffix: "shared senior engineering time",
-    fit: "Continuous shipping",
-    cadence: "Ongoing partnership",
+    name: "Growth Engineering",
+    pricingModel: "Monthly retainer",
+    pricingSuffix: "transparent capacity",
+    fit: "Scaling teams",
+    cadence: "Ongoing sprints",
     summary:
-      "For teams with an active backlog that want a technical partner shipping weekly, not a contractor they have to manage.",
+      "For founders and product leads who need senior frontend, Shopify, and systems engineers shipping roadmap items every week.",
     included: [
-      "Dedicated Slack channel and weekly demos",
-      "Priority access to senior engineering time",
-      "Backlog planning and technical decision support",
-      "Continuity across CRO, storefront, and product work",
+      "Dedicated senior engineering capacity",
+      "Direct communication in Slack/Teams",
+      "Async code reviews and staging deploys",
+      "No long-term lock-in, pause anytime",
     ],
-    ctaLabel: "Explore a retainer",
+    ctaLabel: "Discuss a retainer",
+    badge: "Most popular",
+    featured: true,
   },
 ];
 
 const packageInclusions = [
-  "Written scope before build work begins",
-  "Shared GitHub access from day one",
-  "Clear weekly communication rhythm",
-  "Handoff docs or stabilization plan at the end",
+  "Senior engineers only — no junior pass-off",
+  "Design system alignment and clean component architecture",
+  "Automated testing setup for critical conversion flows",
+  "Performance budgets for Web Vitals and load times",
+  "Full documentation and video walkthroughs on handoff",
+  "Direct Slack channel with your engineering lead",
 ];
 
 function CheckIcon({ featured = false }: { featured?: boolean }) {
   return (
     <span
-      className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-full border ${
+      className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-full border ${
         featured
           ? "border-white/12 bg-white/10 text-white"
           : "border-[#FF707C]/10 bg-[#FF707C]/10 text-[#FF707C]"
@@ -97,6 +103,7 @@ function CheckIcon({ featured = false }: { featured?: boolean }) {
 }
 
 export default function Pricing() {
+  const { openModal } = useModal();
   return (
     <section data-nav-theme="light" className="relative z-10 overflow-hidden bg-[#F7F5F2] px-6 py-24">
       <div className="pointer-events-none absolute inset-0">
@@ -254,15 +261,16 @@ export default function Pricing() {
                   </ul>
 
                   <div className="relative mt-auto inline-block self-start pt-8">
-                    <a
-                      href="#"
-                      className={`inline-flex items-center justify-center rounded-full px-6 py-3 text-[14px] font-semibold text-white transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-[1.04] active:scale-[0.98] shadow-sm ${
-                        featured ? "bg-[#FF707C]" : "bg-[#ff5c6a]"
+                    <button
+                      type="button"
+                      onClick={openModal}
+                      className={`inline-flex items-center justify-center rounded-full px-6 py-3 text-[14px] font-semibold text-white transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-[1.04] active:scale-[0.98] shadow-sm cursor-pointer ${
+                        featured ? "bg-[#FF707C] hover:bg-[#ff5c6a]" : "bg-[#ff5c6a] hover:bg-[#FF707C]"
                       }`}
                       style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
                     >
                       {item.ctaLabel} &rarr;
-                    </a>
+                    </button>
                     <div
                       className={`absolute -bottom-1 -right-1 h-1 w-1 rounded-[1px] ${
                         featured ? "bg-white/70" : "bg-black/30"
@@ -324,13 +332,14 @@ export default function Pricing() {
               </p>
 
               <div className="relative mt-6 inline-block">
-                <a
-                  href="#"
-                  className="inline-flex items-center justify-center rounded-full bg-[#ff5c6a] px-6 py-3 text-[14px] font-semibold text-white transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-[1.04] active:scale-[0.98] shadow-sm"
+                <button
+                  type="button"
+                  onClick={openModal}
+                  className="inline-flex items-center justify-center rounded-full bg-[#ff5c6a] px-6 py-3 text-[14px] font-semibold text-white transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-[1.04] active:scale-[0.98] shadow-sm cursor-pointer hover:bg-[#FF707C]"
                   style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
                 >
                   Book an intro call &rarr;
-                </a>
+                </button>
                 <div className="absolute -bottom-1 -right-1 h-1 w-1 rounded-[1px] bg-black/30" />
               </div>
             </div>

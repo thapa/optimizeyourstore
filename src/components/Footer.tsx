@@ -2,8 +2,10 @@
 
 import Link from "next/link";
 import GrainOverlay from "./ui/GrainOverlay";
+import { useModal } from "@/context/ModalContext";
 
 export default function Footer() {
+  const { openModal } = useModal();
   return (
     // footer root with colors.dark-bg and data-nav-theme="dark"
     <footer 
@@ -33,12 +35,13 @@ export default function Footer() {
             
             {/* Primary pink pill button: colors.primary */}
             <div className="relative inline-block mt-2">
-              <a 
-                href="#"
-                className="inline-flex items-center justify-center bg-[#FF707C] text-white px-6 py-3 rounded-full text-sm font-semibold transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-[1.04] active:scale-[0.98] shadow-sm select-none"
+              <button 
+                type="button"
+                onClick={openModal}
+                className="inline-flex items-center justify-center bg-[#FF707C] text-white px-6 py-3 rounded-full text-sm font-semibold transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-[1.04] active:scale-[0.98] shadow-sm select-none cursor-pointer"
               >
                 Book an intro call
-              </a>
+              </button>
               {/* Signature 4px offset dot in bg-white/70 */}
               <div className="w-1 h-1 rounded-[1px] absolute -bottom-1 -right-1 bg-white/70"></div>
             </div>

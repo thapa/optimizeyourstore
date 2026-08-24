@@ -2,8 +2,10 @@
 
 import Link from "next/link";
 import GrainOverlay from "../ui/GrainOverlay";
+import { useModal } from "@/context/ModalContext";
 
 export default function SalesFooter() {
+  const { openModal } = useModal();
   return (
     <footer 
       data-nav-theme="dark" 
@@ -23,55 +25,56 @@ export default function SalesFooter() {
               Convertiq<span className="font-light">X</span><span className="text-[#FF707C]">.</span>
             </span>
             
-            <p className="text-white/55 text-[14px] leading-relaxed max-w-[280px] font-sans font-medium">
-              Data-driven CRO and ecommerce strategy for D2C Shopify and Shopify Plus brands that want consistent, compounding growth.
+            <p className="text-white/70 text-[14px] leading-relaxed max-w-[280px] font-sans">
+              Conversion rate optimization and growth strategy for high-growth Shopify and Shopify Plus brands.
             </p>
           </div>
 
-          {/* Column 2 — Services */}
-          <div className="flex flex-col items-start">
-            <span className="text-[#FF707C] text-[11px] font-bold tracking-[0.08em] uppercase mb-5 font-sans">
-              Services
+          {/* Column 2 — Navigation */}
+          <div className="flex flex-col items-start gap-4">
+            <span className="text-[#FF707C] text-[11px] font-bold tracking-[0.08em] uppercase mb-1 font-sans">
+              Navigation
             </span>
-            <ul className="flex flex-col gap-y-3.5">
-              {[
-                { name: "Strategy Consultation", href: "#services" },
-                { name: "CRO Retainer", href: "#services" },
-                { name: "Pricing", href: "#pricing" }
-              ].map((item, idx) => (
-                <li key={idx}>
-                  <a 
-                    href={item.href} 
-                    className="text-white/70 hover:text-[#FF707C] text-[14px] font-medium transition-colors duration-200"
-                  >
-                    {item.name}
-                  </a>
-                </li>
-              ))}
+            <ul className="flex flex-col gap-y-3">
+              <li>
+                <Link href="#services" className="text-white/70 hover:text-[#FF707C] text-[14px] font-medium transition-colors duration-200">
+                  Services
+                </Link>
+              </li>
+              <li>
+                <Link href="#pricing" className="text-white/70 hover:text-[#FF707C] text-[14px] font-medium transition-colors duration-200">
+                  Pricing
+                </Link>
+              </li>
+              <li>
+                <Link href="#results" className="text-white/70 hover:text-[#FF707C] text-[14px] font-medium transition-colors duration-200">
+                  Results
+                </Link>
+              </li>
+              <li>
+                <Link href="#faq" className="text-white/70 hover:text-[#FF707C] text-[14px] font-medium transition-colors duration-200">
+                  FAQ
+                </Link>
+              </li>
             </ul>
           </div>
 
-          {/* Column 3 — Company */}
-          <div className="flex flex-col items-start">
-            <span className="text-[#FF707C] text-[11px] font-bold tracking-[0.08em] uppercase mb-5 font-sans">
-              Company
+          {/* Column 3 — Legal */}
+          <div className="flex flex-col items-start gap-4">
+            <span className="text-[#FF707C] text-[11px] font-bold tracking-[0.08em] uppercase mb-1 font-sans">
+              Legal
             </span>
-            <ul className="flex flex-col gap-y-3.5">
-              {[
-                { name: "About", href: "#" },
-                { name: "Results", href: "#results" },
-                { name: "FAQ", href: "#faq" },
-                { name: "Privacy Policy", href: "/privacy" }
-              ].map((item, idx) => (
-                <li key={idx}>
-                  <a 
-                    href={item.href} 
-                    className="text-white/70 hover:text-[#FF707C] text-[14px] font-medium transition-colors duration-200"
-                  >
-                    {item.name}
-                  </a>
-                </li>
-              ))}
+            <ul className="flex flex-col gap-y-3">
+              <li>
+                <Link href="/privacy" className="text-white/70 hover:text-[#FF707C] text-[14px] font-medium transition-colors duration-200">
+                  Privacy Policy
+                </Link>
+              </li>
+              <li>
+                <Link href="/privacy#terms" className="text-white/70 hover:text-[#FF707C] text-[14px] font-medium transition-colors duration-200">
+                  Terms of Service
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -81,14 +84,13 @@ export default function SalesFooter() {
               Contact
             </span>
             <div className="flex flex-col gap-y-3">
-              <a 
-                href="https://calendar.app.google/A3gnRV3q6xhCi2oR8" 
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white/70 hover:text-[#FF707C] text-[14px] font-medium transition-colors duration-200"
+              <button 
+                type="button"
+                onClick={openModal}
+                className="text-white/70 hover:text-[#FF707C] text-[14px] font-medium transition-colors duration-200 text-left cursor-pointer"
               >
                 Book a Call
-              </a>
+              </button>
               <a 
                 href="mailto:hello@convertiqx.com" 
                 className="text-white/70 hover:text-[#FF707C] text-[14px] font-medium transition-colors duration-200"

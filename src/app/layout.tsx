@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import SmoothScroll from '@/components/SmoothScroll';
+import { ModalProvider } from '@/context/ModalContext';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://convertiqx.com'),
@@ -35,7 +36,9 @@ export default function RootLayout({
     <html lang="en" className="dark">
       <body className="font-sans antialiased bg-[#0E0B0D] text-white">
         <SmoothScroll />
-        {children}
+        <ModalProvider>
+          {children}
+        </ModalProvider>
       {/* impeccable-live-start */}
 <script src="http://localhost:8400/live.js"></script>
 {/* impeccable-live-end */}
@@ -43,3 +46,4 @@ export default function RootLayout({
     </html>
   );
 }
+

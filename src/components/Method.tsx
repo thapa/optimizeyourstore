@@ -4,6 +4,7 @@ import { useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import { useModal } from "@/context/ModalContext";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger, useGSAP);
@@ -18,6 +19,7 @@ interface Step {
 }
 
 export default function Method() {
+  const { openModal } = useModal();
   const containerRef = useRef<HTMLDivElement>(null);
   const progressLineRef = useRef<HTMLDivElement>(null);
   const stepRefs = useRef<(HTMLDivElement | null)[]>([]);
@@ -101,12 +103,13 @@ export default function Method() {
 
             {/* Primary CTA */}
             <div className="relative inline-block">
-              <a 
-                href="#"
-                className="inline-flex items-center justify-center bg-[#ff5c6a] text-white rounded-full px-6 py-3 text-sm font-semibold transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-[1.04] active:scale-[0.98] focus:outline-hidden focus-visible:ring-2 focus-visible:ring-[#FF707C] shadow-sm"
+              <button 
+                type="button"
+                onClick={openModal}
+                className="inline-flex items-center justify-center bg-[#ff5c6a] text-white rounded-full px-6 py-3 text-sm font-semibold transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-[1.04] active:scale-[0.98] focus:outline-hidden focus-visible:ring-2 focus-visible:ring-[#FF707C] shadow-sm cursor-pointer"
               >
                 Book an intro call &rarr;
-              </a>
+              </button>
               <div className="w-1 h-1 rounded-[1px] absolute -bottom-1 -right-1 bg-black/30"></div>
             </div>
           </div>

@@ -2,11 +2,13 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { useModal } from '@/context/ModalContext';
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [mounted, setMounted] = useState(false);
   const [isDark, setIsDark] = useState(true);
+  const { openModal } = useModal();
 
   useEffect(() => {
     setMounted(true);
@@ -81,19 +83,18 @@ export default function Header() {
       {/* Right Controls */}
       <div className="flex items-center gap-3">
         <div className="relative ml-2">
-          <a
-            href="https://calendar.app.google/A3gnRV3q6xhCi2oR8"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={`px-4 py-2 md:px-5 md:py-2.5 rounded-full text-[12px] md:text-[14px] font-semibold transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-[1.04] active:scale-[0.98] shadow-sm block
+          <button
+            type="button"
+            onClick={openModal}
+            className={`px-4 py-2 md:px-5 md:py-2.5 rounded-full text-[12px] md:text-[14px] font-semibold transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-[1.04] active:scale-[0.98] shadow-sm block cursor-pointer
               ${isDark 
-                ? 'bg-[#FF707C] text-white' 
-                : 'bg-[#ff5c6a] text-white'
+                ? 'bg-[#FF707C] text-white hover:bg-[#ff5c6a]' 
+                : 'bg-[#ff5c6a] text-white hover:bg-[#FF707C]'
               }
             `}
           >
             Book Free Call
-          </a>
+          </button>
           <div className={`w-1 h-1 rounded-[1px] absolute -bottom-1 -right-1 transition-colors duration-300 ${decoDot}`}></div>
         </div>
       </div>

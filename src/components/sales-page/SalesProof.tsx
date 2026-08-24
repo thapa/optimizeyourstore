@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { useModal } from '@/context/ModalContext';
 
 interface ProofHighlight {
   label: string;
@@ -15,6 +16,7 @@ interface ProofHighlight {
 }
 
 export default function SalesProof() {
+  const { openModal } = useModal();
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
   const [imgErrors, setImgErrors] = useState<Record<number, boolean>>({});
 
@@ -235,17 +237,16 @@ export default function SalesProof() {
           </div>
 
           <div className="relative">
-            <a
-              href="https://calendar.app.google/A3gnRV3q6xhCi2oR8"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center bg-[#FF707C] text-[#0E0B0D] px-7 py-4 text-[15px] font-semibold rounded-full transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-[1.04] active:scale-[0.98] shadow-lg hover:bg-[#ff5c6a]"
+            <button
+              type="button"
+              onClick={openModal}
+              className="inline-flex items-center justify-center bg-[#FF707C] text-[#0E0B0D] px-7 py-4 text-[15px] font-semibold rounded-full transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-[1.04] active:scale-[0.98] shadow-lg hover:bg-[#ff5c6a] cursor-pointer"
             >
               Get These Results for Your Store
               <svg className="ml-2" width="16" height="16" viewBox="0 0 16 16" fill="none">
                 <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
-            </a>
+            </button>
             <div className="absolute -bottom-1 -right-1 h-1 w-1 rounded-[1px] bg-white/70" />
           </div>
         </div>

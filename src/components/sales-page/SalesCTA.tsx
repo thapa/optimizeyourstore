@@ -1,8 +1,10 @@
 'use client';
 
 import GrainOverlay from "../ui/GrainOverlay";
+import { useModal } from "@/context/ModalContext";
 
 export default function SalesCTA() {
+  const { openModal } = useModal();
   return (
     <section 
       id="book"
@@ -52,17 +54,16 @@ export default function SalesCTA() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full">
             {/* Primary CTA button */}
             <div className="relative w-full sm:w-auto flex justify-center">
-              <a 
-                href="https://calendar.app.google/A3gnRV3q6xhCi2oR8"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex w-full sm:w-auto items-center justify-center bg-[#FF707C] text-white px-7 py-4 rounded-full text-[15px] font-semibold tracking-wide transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-[1.04] hover:bg-[#ff5c6a] active:scale-[0.98] focus:outline-hidden focus-visible:ring-2 focus-visible:ring-[#FF707C] shadow-lg text-center"
+              <button 
+                type="button"
+                onClick={openModal}
+                className="inline-flex w-full sm:w-auto items-center justify-center bg-[#FF707C] text-white px-7 py-4 rounded-full text-[15px] font-semibold tracking-wide transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-[1.04] hover:bg-[#ff5c6a] active:scale-[0.98] focus:outline-hidden focus-visible:ring-2 focus-visible:ring-[#FF707C] shadow-lg text-center cursor-pointer"
               >
                 Get My Free Store Diagnosis
                 <svg className="ml-2" width="16" height="16" viewBox="0 0 16 16" fill="none">
                   <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
-              </a>
+              </button>
               <div className="w-1 h-1 rounded-[1px] absolute -bottom-1 -right-1 bg-white/70 hidden sm:block"></div>
             </div>
 

@@ -1,6 +1,7 @@
 'use client';
 
 import { useRef, MouseEvent } from 'react';
+import { useModal } from '@/context/ModalContext';
 
 interface Feature {
   bold?: string;
@@ -23,6 +24,8 @@ interface PriceCard {
 }
 
 export default function SalesPricing() {
+  const { openModal } = useModal();
+
   const auditCard: PriceCard = {
     tier: "CRO Strategy Audit",
     name: "Complete Strategy Audit",
@@ -32,7 +35,7 @@ export default function SalesPricing() {
     period: "one-time project",
     note: "Delivered within 10 business days",
     ctaLabel: "Book Strategy Audit",
-    ctaLink: "https://calendar.app.google/A3gnRV3q6xhCi2oR8",
+    ctaLink: "#",
     features: [
       { text: "Full UX, layout & navigation audit" },
       { text: "Copy & buying psychology audit (Home + PDPs)" },
@@ -52,7 +55,7 @@ export default function SalesPricing() {
     period: "monthly retainer",
     note: "3-month minimum engagement",
     ctaLabel: "Book Discovery Call",
-    ctaLink: "https://calendar.app.google/A3gnRV3q6xhCi2oR8",
+    ctaLink: "#",
     featured: true,
     features: [
       { text: "4–5 A/B tests launched per month" },
@@ -181,18 +184,17 @@ export default function SalesPricing() {
         </ul>
 
         <div className="relative mt-auto inline-block self-stretch">
-          <a
-            href={card.ctaLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={`inline-flex w-full items-center justify-center rounded-full px-6 py-3.5 text-[14px] font-semibold transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-[1.04] active:scale-[0.98] shadow-sm ${
+          <button
+            type="button"
+            onClick={openModal}
+            className={`inline-flex w-full items-center justify-center rounded-full px-6 py-3.5 text-[14px] font-semibold transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-[1.04] active:scale-[0.98] shadow-sm cursor-pointer ${
               card.featured 
-                ? "bg-[#FF707C] text-white" 
+                ? "bg-[#FF707C] text-white hover:bg-[#ff5c6a]" 
                 : "bg-transparent border border-[#11100F]/25 text-[#11100F] hover:bg-[#11100F]/5"
             }`}
           >
             {card.ctaLabel}
-          </a>
+          </button>
           {card.featured && (
             <div className="absolute -bottom-1 -right-1 h-1 w-1 rounded-[1px] bg-white/70" />
           )}

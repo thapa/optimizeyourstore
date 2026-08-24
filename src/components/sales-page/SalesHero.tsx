@@ -2,6 +2,7 @@
 
 import { useEffect, useState, useRef } from 'react';
 import HeroWebGL from '@/components/HeroWebGL';
+import { useModal } from '@/context/ModalContext';
 
 function AnimatedCounter({
   target,
@@ -64,6 +65,7 @@ function AnimatedCounter({
 
 export default function SalesHero() {
   const heroCardRef = useRef<HTMLDivElement>(null);
+  const { openModal } = useModal();
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -130,17 +132,16 @@ export default function SalesHero() {
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto mb-16">
             <div className="relative">
-              <a
-                href="https://calendar.app.google/A3gnRV3q6xhCi2oR8"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-[#FF707C] px-7 py-4 text-[15px] font-semibold text-[#0E0B0D] transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-[1.04] active:scale-[0.98] shadow-[0_4px_20px_rgba(255,112,124,0.15)] hover:shadow-[0_8px_32px_rgba(255,112,124,0.3)] hover:bg-[#ff5c6a] w-full sm:w-auto"
+              <button
+                type="button"
+                onClick={openModal}
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-[#FF707C] px-7 py-4 text-[15px] font-semibold text-[#0E0B0D] transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-[1.04] active:scale-[0.98] shadow-[0_4px_20px_rgba(255,112,124,0.15)] hover:shadow-[0_8px_32px_rgba(255,112,124,0.3)] hover:bg-[#ff5c6a] w-full sm:w-auto cursor-pointer"
               >
                 Find My Revenue Leaks
                 <svg className="transition-transform duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)] group-hover:translate-x-1" width="16" height="16" viewBox="0 0 16 16" fill="none">
                   <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
-              </a>
+              </button>
               <div className="absolute -bottom-1 -right-1 h-1 w-1 rounded-[1px] bg-white/70 hidden sm:block" />
             </div>
 
