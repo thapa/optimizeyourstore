@@ -16,7 +16,7 @@ export default function SalesComparison() {
   const newWayItems = [
     <>Launching store variants backed by <strong>real customer click and behavior data</strong></>,
     <>A store that converts paid traffic at a <strong>higher profit per session</strong></>,
-    <>Partnering with specialists whose success is tied directly to your <strong>net margins</strong></>,
+    <>Keep only if the retainer has a margin-linked component. Otherwise: Partnering with specialists who report on profit per session, <strong>not vanity metrics.</strong></>,
     <>Custom, lightweight code that keeps your <strong>checkout lightning fast</strong></>,
     <>Knowing the exact bottleneck of your store and <strong>fixing it systematically</strong></>
   ];
@@ -52,11 +52,11 @@ export default function SalesComparison() {
             The Shift
           </p>
           <h2
-            className="mx-auto max-w-[52rem] text-white text-[clamp(2rem,4vw,3.5rem)] font-semibold leading-[1.15] tracking-[-0.025em]"
+            className="mx-auto max-w-[70rem] text-white text-[clamp(2rem,4vw,3.5rem)] font-semibold leading-[1.15] tracking-[-0.025em]"
             style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
           >
-            You don't have a traffic problem.<br />
-            <span className="text-[#FF707C]">You have a session economics problem.</span>
+            The brands that scale don't buy more clicks.<br />
+            <span className="text-[#FF707C]">They earn more per click.</span>
           </h2>
           <p
             className="mx-auto mt-6 max-w-2xl text-[14px] md:text-[15px] font-medium leading-[24px] text-white/50"

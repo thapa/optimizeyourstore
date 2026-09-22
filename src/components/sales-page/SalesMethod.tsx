@@ -46,7 +46,7 @@ export default function SalesMethod() {
       numberStr: "03",
       title: "Test & Iterate",
       duration: "Ongoing sprints",
-      description: "Tests are designed, built, QA'd, and launched on your Shopify store. We run each test until statistical significance is reached.",
+      description: "Tests are designed, built, QA'd, and launched on your Shopify store. Each test runs to a pre-set sample size and decision rule — results are real, not peeked.",
       deliverables: "We deliver: variant setups · QA sign-off · live A/B tests"
     },
     {
@@ -112,7 +112,7 @@ export default function SalesMethod() {
                 onClick={openModal}
                 className="inline-flex items-center justify-center bg-[#ff5c6a] text-white rounded-full px-6 py-3 text-sm font-semibold transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-[1.04] active:scale-[0.98] focus:outline-hidden focus-visible:ring-2 focus-visible:ring-[#FF707C] shadow-sm cursor-pointer"
               >
-                Book Your Free Call &rarr;
+                Get My Revenue Leak Diagnostic &rarr;
               </button>
               <div className="w-1 h-1 rounded-[1px] absolute -bottom-1 -right-1 bg-black/30"></div>
             </div>

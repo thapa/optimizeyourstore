@@ -115,7 +115,7 @@ export default function Hero() {
           {/* Trust Badge */}
           <div className="inline-flex items-center gap-2.5 rounded-full border px-4.5 py-2 text-[13px] font-semibold text-[#FF707C] mb-8 bg-[#FF707C]/8 border-[#FF707C]/30 animate-fadeUp">
             <span className="w-1.75 h-1.75 rounded-full bg-[#FF707C] animate-dot-pulse" />
-            Trusted by 47+ D2C Shopify & Shopify Plus Brands
+            CRO & A/B testing for D2C Shopify & Shopify Plus brands.
           </div>
 
           {/* Headline */}
@@ -192,21 +192,22 @@ export default function Hero() {
               <div className="flex items-center justify-between mb-5">
                 <div>
                   <div className="text-[11px] font-bold tracking-widest uppercase text-white/40 mb-1">What You Get</div>
-                  <div className="text-[16px] font-extrabold text-white">Full Strategy Package</div>
+                  <div className="text-[16px] font-extrabold text-white">Revenue Leak Diagnostic</div>
                 </div>
                 <div className="rounded-[8px] border border-[#FF707C]/30 bg-[#FF707C]/10 px-3 py-1.25 text-[11px] font-bold text-[#FF707C]">
-                  10 Days
+                  delivered in 10 business days
                 </div>
               </div>
 
               {/* Deliverables List */}
               <div className="flex flex-col gap-2 mb-5">
                 {[
-                  'Full Store & UX Audit',
-                  'Copy & Messaging Audit',
-                  'Funnel & Checkout Audit',
-                  '90-Day Revenue Roadmap',
-                  '60-Min Strategy Call',
+                  'Funnel model from your GA4 + Shopify data',
+                  'Clarity behavioral analysis',
+                  'Unit economics & profit-lever review',
+                  'Traffic-feasibility verdict',
+                  'Ranked 90-day test roadmap',
+                  '60-min walkthrough call',
                 ].map((item) => (
                   <div
                     key={item}

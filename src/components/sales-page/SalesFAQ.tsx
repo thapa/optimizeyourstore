@@ -17,11 +17,11 @@ export default function SalesFAQ() {
     },
     {
       question: "Do you work with Shopify Plus specifically?",
-      answer: "Yes. We work with both standard Shopify and Shopify Plus. For Plus brands, we have full experience with Checkout Extensibility, Scripts (now Functions), custom checkout flows, and personalisation using Shopify's native tools. Shopify Plus unlocks significantly more testing surface area than standard Shopify."
+      answer: "Yes. We work with both standard Shopify and Shopify Plus. For Plus brands, we have full experience with Checkout Extensibility, Shopify Functions, custom checkout flows, and personalisation using Shopify's native tools. Shopify Plus unlocks significantly more testing surface area than standard Shopify."
     },
     {
       question: "How quickly will I see results?",
-      answer: "The audit alone typically surfaces quick-win fixes within the first week. Most clients see measurable CVR improvements within 30–60 days of implementation. For the CRO retainer, we aim to have the first tests live within 2 weeks of onboarding, with results reportable within 4–6 weeks depending on traffic volume."
+      answer: "The audit alone typically surfaces quick-win fixes within the first week. First tests typically go live within 2 weeks of onboarding. Results timing depends on your traffic — the Diagnostic tells you exactly how long a test needs on your store of implementation. For the CRO retainer, we aim to have the first tests live within 2 weeks of onboarding, with results reportable within 4–6 weeks depending on traffic volume."
     },
     {
       question: "Can I start with the audit and move to the retainer later?",
@@ -29,7 +29,7 @@ export default function SalesFAQ() {
     },
     {
       question: "What testing tools do you use?",
-      answer: "We primarily use Convert.com, VWO, Varify.io and Intelligems for A/B testing on Shopify. For analytics, we work with GA4, Shopify Analytics, Hotjar/Microsoft Clarity for heatmaps, and Littledata for accurate attribution. Tool selection depends on your existing stack — we'll recommend what makes sense for your store."
+      answer: "We primarily use Varify.io and Intelligems for A/B testing on Shopify. For analytics, we work with GA4, Shopify Analytics, Hotjar/Microsoft Clarity for heatmaps, and Littledata for accurate attribution. Tool selection depends on your existing stack — we'll recommend what makes sense for your store."
     },
     {
       question: "What's your process if a test loses?",
@@ -37,7 +37,15 @@ export default function SalesFAQ() {
     },
     {
       question: "Is there a minimum contract length?",
-      answer: "CRO retainers require a 3-month minimum. This isn't arbitrary — the first month is onboarding and audit refinement, month two is when the first tests typically reach significance, and month three is when we start compounding wins from the data collected. Shorter engagements don't give the testing programme enough runway to show meaningful results."
+      answer: "CRO retainers require a 3-month minimum. This isn't arbitrary — the first month is onboarding and audit refinement, Align with the one timeline used elsewhere on the page (2-week launch, results depend on traffic), and month three is when we start compounding wins from the data collected. Shorter engagements don't give the testing programme enough runway to show meaningful results."
+    },
+    {
+      question: "Does the Diagnostic cost count toward the retainer?",
+      answer: "Yes — start within 30 days and the full $1,497 is credited."
+    },
+    {
+      question: "What if my traffic is too low to test?",
+      answer: "The Diagnostic tells you. If you're below threshold, you get a prioritized implementation roadmap instead of a test plan — so you're not wasting months on underpowered tests."
     }
   ];
 

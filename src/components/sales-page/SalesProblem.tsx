@@ -15,9 +15,9 @@ export default function SalesProblem() {
           <polyline points="17 6 23 6 23 12" />
         </svg>
       ),
-      title: "You're paying for traffic that doesn't convert",
+      title: "You're paying for sessions that don't pay you back. Every visitor you buy has a cost",
       description:
-        "The average Shopify store converts at 1.4%. You're spending thousands on ads to send people to a store that turns away 98 of every 100 visitors. CRO fixes this.",
+        "your store can't convert them profitably, more ad spend just scales the loss.",
     },
     {
       icon: (
@@ -56,16 +56,16 @@ export default function SalesProblem() {
           <path d="M8.5 10L4 18.5a2 2 0 0 0 1.7 2.5h12.6a2 2 0 0 0 1.7-2.5L15.5 10z" />
         </svg>
       ),
-      title: "You're guessing instead of testing",
+      title: "You're guessing instead of testing. Changes shipped on gut feel can quietly cost you revenue",
       description:
-        "Gut-feel decisions cost brands 20-40% of potential revenue. Structured A/B testing with statistical rigour is the only way to know what actually moves the needle.",
+        "and you'd never know which ones did.",
     },
   ];
 
   return (
     <section data-nav-theme="light" className="relative z-10 bg-[#F7F5F2] px-6 py-24 md:py-32">
       <div className="mx-auto max-w-[1340px]">
-        <div className="mx-auto mb-16 max-w-4xl text-center">
+        <div className="mx-auto mb-16 max-w-5xl text-center">
           <p
             className="mb-4 text-[14px] font-medium uppercase tracking-[0.08em]"
             style={{ color: "#FF707C", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
@@ -73,10 +73,10 @@ export default function SalesProblem() {
             The Revenue Problem
           </p>
           <h2
-            className="mx-auto max-w-[48rem] text-[clamp(2rem,4vw,3.5rem)] font-semibold leading-[1.2] tracking-[-0.025em] text-[#11100F]"
+            className="mx-auto max-w-[70rem] text-[clamp(2rem,4vw,3.5rem)] font-semibold leading-[1.2] tracking-[-0.025em] text-[#11100F]"
             style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
           >
-            Your Ads Are Fine.<br />Your Store Is the Leak.
+            You don't have a traffic problem.<br /> You have a session economics problem.
           </h2>
           <p
             className="mx-auto max-w-2xl text-[14px] font-medium leading-[22px] mt-6"
@@ -85,7 +85,7 @@ export default function SalesProblem() {
               fontFamily: "'Plus Jakarta Sans', sans-serif",
             }}
           >
-            Most ecommerce brands pour budget into paid traffic while ignoring the silent conversion killers on their own store — losing 95–97% of every visitor they paid to bring in.
+            Most ecommerce brands pour budget into paid traffic while ignoring the silent conversion killers on their own store — Cut, or cite a source you can defend.
           </p>
         </div>
 

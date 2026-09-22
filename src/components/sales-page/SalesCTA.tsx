@@ -45,7 +45,7 @@ export default function SalesCTA() {
 
         {/* Supporting Copy */}
         <p className="text-white/70 font-medium text-lg leading-[28px] max-w-[34rem] mb-12 text-center font-sans">
-          Book a free 30-minute strategy call. We'll look at your store, identify your top 3 conversion leaks, and tell you exactly what we'd fix first — no pitch, no pressure.
+          Get your Revenue Leak Diagnostic: every leak sized in dollars, a traffic-feasibility verdict, and your first 3 tests ranked. Delivered in 10 business days.
         </p>
 
         {/* Action Group */}
@@ -59,12 +59,12 @@ export default function SalesCTA() {
                 onClick={openModal}
                 className="inline-flex w-full sm:w-auto items-center justify-center bg-[#FF707C] text-white px-7 py-4 rounded-full text-[15px] font-semibold tracking-wide transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-[1.04] hover:bg-[#ff5c6a] active:scale-[0.98] focus:outline-hidden focus-visible:ring-2 focus-visible:ring-[#FF707C] shadow-lg text-center cursor-pointer"
               >
-                Get My Free Store Diagnosis
+                Get My Revenue Leak Diagnostic
                 <svg className="ml-2" width="16" height="16" viewBox="0 0 16 16" fill="none">
                   <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </button>
-              <div className="w-1 h-1 rounded-[1px] absolute -bottom-1 -right-1 bg-white/70 hidden sm:block"></div>
+              {/* <div className="w-1 h-1 rounded-[1px] absolute -bottom-1 -right-1 bg-white/70 hidden sm:block"></div> */}
             </div>
 
             {/* Secondary CTA button */}
@@ -81,7 +81,7 @@ export default function SalesCTA() {
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="text-[#FF707C]/60 shrink-0">
               <path d="M7 1l1.5 4h4l-3.3 2.4 1.3 4L7 9 3.5 11.4l1.3-4L1.5 5h4L7 1z" stroke="currentColor" strokeWidth="1.2" fill="currentColor" />
             </svg>
-            No long-term commitment required — start with the audit and scale from there
+            Start with the Diagnostic. No retainer commitment required. (Current line contradicts the 3-month minimum.)
           </p>
         </div>
       </div>

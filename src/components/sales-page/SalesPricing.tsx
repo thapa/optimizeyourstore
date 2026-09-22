@@ -28,21 +28,21 @@ export default function SalesPricing() {
 
   const auditCard: PriceCard = {
     tier: "CRO Strategy Audit",
-    name: "Complete Strategy Audit",
+    name: "Revenue Leak Diagnostic",
     desc: "A comprehensive deep-dive into your store ecosystem to map out and prioritize every conversion leak.",
     amount: "1,497",
     currency: "$",
     period: "one-time project",
     note: "Delivered within 10 business days",
-    ctaLabel: "Book Strategy Audit",
+    ctaLabel: "Get My Diagnostic",
     ctaLink: "#",
     features: [
-      { text: "Full UX, layout & navigation audit" },
-      { text: "Copy & buying psychology audit (Home + PDPs)" },
-      { text: "Full funnel audit (Cart, checkout & post-purchase)" },
-      { text: "90-day prioritised testing roadmap" },
-      { text: "60-minute strategy walkthrough call" },
-      { text: "30–50 page written recommendations report" },
+      { text: "Funnel model from your GA4 + Shopify data" },
+      { text: "Clarity behavioral analysis" },
+      { text: "Unit economics & profit-lever review" },
+      { text: "Traffic-feasibility verdict" },
+      { text: "Ranked 90-day test roadmap" },
+      { text: "60-min walkthrough call" },
     ]
   };
 
@@ -54,16 +54,16 @@ export default function SalesPricing() {
     isCustomAmount: true,
     period: "monthly retainer",
     note: "3-month minimum engagement",
-    ctaLabel: "Book Discovery Call",
+    ctaLabel: "Apply for the Retainer",
     ctaLink: "#",
     featured: true,
     features: [
-      { text: "4–5 A/B tests launched per month" },
+      { text: "Test cadence set by your traffic and MDE — calculated in the Diagnostic" },
       { text: "End-to-end execution (design, copy, custom dev)" },
       { text: "Bi-weekly strategy review & planning calls" },
       { text: "Shopify Plus checkout & flow optimization" },
       { text: "Priority Slack access (same-day response)" },
-      { text: "Compounding, permanent conversion rate wins" },
+      { text: "Winners shipped permanently. Every test documented." },
     ]
   };
 
@@ -214,7 +214,7 @@ export default function SalesPricing() {
         <div className="mx-auto max-w-2xl mb-12 flex justify-center">
           <div className="inline-flex items-center gap-3 rounded-2xl border border-green-600/15 bg-green-600/[0.03] p-4 text-[13px] sm:text-[14px] font-semibold text-green-800 shadow-[0_1px_2px_rgba(0,0,0,0.02)] leading-relaxed max-w-[580px] text-center justify-center font-sans">
             <span className="text-[18px] shrink-0">🛡️</span>
-            <span>If we don't find you at least 10× your investment in revenue opportunities, you get a full refund. No questions asked.</span>
+            <span>If we can't show you a leak sized in dollars from your own data, full refund.</span>
           </div>
         </div>
 
@@ -247,7 +247,7 @@ export default function SalesPricing() {
               fontFamily: "'Plus Jakarta Sans', sans-serif",
             }}
           >
-            You just saw $534,000/mo in added revenue across 6 real tests. Our Strategy Audit is $1,497.
+            Start with the Diagnostic. Move to the retainer within 30 days and the full $1,497 is credited.
           </p>
         </div>
 

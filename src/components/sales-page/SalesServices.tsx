@@ -52,10 +52,10 @@ export default function SalesServices() {
               className="text-[#11100F] font-semibold tracking-[-0.025em] text-[clamp(24px,3.6vw,42px)] leading-[1.15] mb-5"
               style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
             >
-              Ecommerce Strategy Consultation
+              Revenue Leak Diagnostic
             </h3>
             <p className="text-[#11100F]/70 text-base leading-relaxed mb-8">
-              A comprehensive deep-dive into your entire store ecosystem. We audit your UX, copy, funnel, and competitive landscape — then hand you a 90-day growth strategy you can actually execute.
+              A dollar-sized map of where your store loses profit per session — and exactly what to test first.
             </p>
             
             <p className="text-[12px] font-bold tracking-[0.08em] uppercase text-[#11100F]/40 mb-4">
@@ -63,12 +63,12 @@ export default function SalesServices() {
             </p>
             <ul className="flex flex-col gap-3.5 mb-10 w-full">
               {[
-                { bold: "Ecommerce Store Audit", text: " — UX, design, navigation, product pages, cart, checkout" },
-                { bold: "Copy Audit", text: " — Headlines, CTAs, product descriptions, email flows" },
-                { bold: "Funnel Audit", text: " — Full customer journey from ad click to post-purchase" },
-                { bold: "90-Day Growth Strategy", text: " — Prioritised roadmap with actionable quick wins" },
-                { bold: "1× 60-min Strategy Call", text: " — Full walkthrough + Q&A on your roadmap" },
-                { bold: "Written Recommendations Report", text: " — 30–60 page PDF deliverable" },
+                { bold: "", text: "Funnel model from your GA4 + Shopify data" },
+                { bold: "", text: "Clarity behavioral analysis" },
+                { bold: "", text: "Unit economics & profit-lever review" },
+                { bold: "", text: "Traffic-feasibility verdict" },
+                { bold: "", text: "Ranked 90-day test roadmap" },
+                { bold: "", text: "60-min walkthrough call" },
               ].map((item, idx) => (
                 <li key={idx} className="flex items-start gap-3 text-[15px] text-[#11100F]/70">
                   {checkIcon}
@@ -128,7 +128,7 @@ export default function SalesServices() {
 
               {/* Priority finding callout box */}
               <div className="mt-6 p-4 bg-[#FF707C]/5 border border-[#FF707C]/20 rounded-xl">
-                <div className="text-[12px] font-bold text-[#ff5c6a] mb-1">🚨 Priority Finding</div>
+                <div className="text-[12px] font-bold text-[#ff5c6a] mb-1">🚨 Sample Finding</div>
                 <div className="text-[13px] text-[#11100F]/80 leading-relaxed font-medium">
                   Checkout abandonment at 78% — primary CTA above the fold is competing with 3 other CTAs.
                 </div>
@@ -187,7 +187,7 @@ export default function SalesServices() {
                   <span className="text-[15px] font-bold text-green-600">+31.29%</span>
                 </div>
                 <div className="flex justify-between items-center px-4 py-3.5 bg-[#FF707C]/5 border border-[#FF707C]/15 rounded-xl">
-                  <span className="text-[13px] font-semibold text-[#11100F]/75">Est. Additional Revenue</span>
+                  <span className="text-[13px] font-semibold text-[#11100F]/75">Projected impact at full rollout:</span>
                   <span className="text-[15px] font-bold text-[#ff5c6a]">+$159,858/mo</span>
                 </div>
               </div>
@@ -206,7 +206,7 @@ export default function SalesServices() {
               CRO & A/B Testing for D2C Shopify & Shopify Plus Brands
             </h3>
             <p className="text-[#11100F]/70 text-base leading-relaxed mb-8">
-              A fully managed, data-driven CRO programme for D2C Shopify and Shopify Plus brands. We research, design, run, and analyse experiments every month — you see the revenue lift.
+              A fully managed, data-driven CRO programme for D2C Shopify and Shopify Plus brands. We research, design, run, and analyse experiments every month — you see the lift in conversion rate, AOV and revenue per visitor.
             </p>
             
             <p className="text-[12px] font-bold tracking-[0.08em] uppercase text-[#11100F]/40 mb-4">
@@ -219,7 +219,7 @@ export default function SalesServices() {
                 { bold: "Full Test Design & Implementation", text: " — We build, QA, and launch every test" },
                 { bold: "Statistical Analysis & Reporting", text: " — Full test reports with actionable insights" },
                 { bold: "Monthly Strategy Calls", text: " — Review results, plan next sprint, align on goals" },
-                { bold: "Shopify Plus Compatible", text: " — Scripts, Checkout Extensibility, Custom Flows" },
+                { bold: "Shopify Plus", text: " — Checkout Extensibility, Shopify Functions, custom flows (Scripts are deprecated)" },
               ].map((item, idx) => (
                 <li key={idx} className="flex items-start gap-3 text-[15px] text-[#11100F]/70">
                   {checkIcon}

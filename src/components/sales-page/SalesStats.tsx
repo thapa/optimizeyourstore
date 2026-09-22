@@ -69,7 +69,7 @@ export default function SalesStats() {
     },
     {
       num: <AnimatedCounter target={534} prefix="$" suffix="K" />,
-      label: "Extra revenue added per month across client tests"
+      label: "[X] A/B tests run"
     },
     {
       num: <AnimatedCounter target={47} suffix="+" />,
@@ -101,7 +101,7 @@ export default function SalesStats() {
             Actually Mean Something
           </h2>
           <p className="text-white/65 text-base font-medium leading-6">
-            We don't report impressions or clicks. We report the metrics that show up in your bank account.
+            We don't report impressions or clicks. We report CVR, AOV, RPV and profit per session — not impressions or clicks.
           </p>
         </div>
 

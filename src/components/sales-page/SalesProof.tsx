@@ -163,8 +163,9 @@ export default function SalesProof() {
                   <span className="text-green-400 font-bold">{item.rpv}</span>
                 </div>
                 <div className="flex justify-between items-center text-[12px]">
-                  <span className="text-white/40">Est. monthly</span>
-                  <span className="text-[#FF707C] font-bold">{item.monthly}</span>
+                  <span className="text-white/40">Projected/mo</span>
+                  <span className="text-[#FF707C] font-bold">+$X • [tool] • [X]% confidence</span>
+                  {/* <span className="text-[#FF707C] font-bold">{item.monthly}</span> */}
                 </div>
               </div>
             </div>
@@ -233,7 +234,7 @@ export default function SalesProof() {
           <div className="flex flex-col text-left">
             <span className="text-[11px] font-bold uppercase tracking-wider text-white/40 mb-2">Across these 6 real tests</span>
             <div className="text-[36px] font-extrabold tracking-tight text-white leading-none">$534,000<span className="text-[#FF707C] text-[20px] font-bold">/mo</span></div>
-            <span className="text-[14px] text-white/50 mt-1 font-medium">in estimated additional monthly revenue generated across 6 real client tests</span>
+            <span className="text-[14px] text-white/50 mt-1 font-medium">Combined projected monthly impact across 6 live tests, if each winner runs at full traffic: $[X]</span>
           </div>
 
           <div className="relative">
@@ -242,12 +243,12 @@ export default function SalesProof() {
               onClick={openModal}
               className="inline-flex items-center justify-center bg-[#FF707C] text-[#0E0B0D] px-7 py-4 text-[15px] font-semibold rounded-full transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-[1.04] active:scale-[0.98] shadow-lg hover:bg-[#ff5c6a] cursor-pointer"
             >
-              Get These Results for Your Store
+              Find My Store's Leaks
               <svg className="ml-2" width="16" height="16" viewBox="0 0 16 16" fill="none">
                 <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </button>
-            <div className="absolute -bottom-1 -right-1 h-1 w-1 rounded-[1px] bg-white/70" />
+            {/* <div className="absolute -bottom-1 -right-1 h-1 w-1 rounded-[1px] bg-white/70" /> */}
           </div>
         </div>
       </div>

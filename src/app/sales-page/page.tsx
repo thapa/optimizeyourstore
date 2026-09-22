@@ -15,15 +15,15 @@ import SalesFooter from '@/components/sales-page/SalesFooter';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://convertiqx.com'),
-  title: 'ConvertiqX — CRO & Ecommerce Growth Strategy',
-  description: 'We find every conversion leak in your Shopify store and fix it. Real test data. Real results.',
+  title: 'ConvertiqX — CRO & A/B Testing for Shopify Brands',
+  description: 'Same traffic. More profit. We find the conversion leaks costing your Shopify store money, size them in dollars, and test the fixes.',
   // This route serves the same content as `/`, which is now canonical.
   alternates: {
     canonical: '/',
   },
   openGraph: {
     title: 'ConvertiqX — CRO & A/B Testing for Shopify Brands',
-    description: 'We find every conversion leak in your Shopify store and fix it. Real test data. Real results.',
+    description: 'Same traffic. More profit. We find the conversion leaks costing your Shopify store money, size them in dollars, and test the fixes.',
     images: [
       {
         url: '/og-image.png',
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'ConvertiqX — CRO & A/B Testing for Shopify Brands',
-    description: 'We find every conversion leak in your Shopify store and fix it. Real test data. Real results.',
+    description: 'Same traffic. More profit. We find the conversion leaks costing your Shopify store money, size them in dollars, and test the fixes.',
     images: ['/og-image.png'],
   },
 };
