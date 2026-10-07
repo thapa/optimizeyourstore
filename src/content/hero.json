@@ -14,11 +14,11 @@
       "label": "Stores Audited"
     },
     {
-      "value": 534,
+      "value": 10,
       "prefix": "$",
-      "suffix": "K/mo",
+      "suffix": "Millions/mo",
       "decimal": false,
-      "label": "Projected monthly impact (at full rollout)"
+      "label": "Revenue Added (at full rollout)"
     },
     {
       "value": 23,
