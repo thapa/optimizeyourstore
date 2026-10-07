@@ -3,9 +3,30 @@
   "headline": "Numbers That\nActually Mean Something",
   "intro": "We don't report impressions or clicks. We report CVR, AOV, RPV and profit per session — not impressions or clicks.",
   "stats": [
-    { "value": 23, "prefix": "", "suffix": "%+", "decimal": false, "label": "Highest CVR lift from a single A/B test" },
-    { "value": 534, "prefix": "$", "suffix": "K", "decimal": false, "label": "[X] A/B tests run" },
-    { "value": 47, "prefix": "", "suffix": "+", "decimal": false, "label": "Shopify & Shopify Plus stores audited" },
-    { "value": 99, "prefix": "", "suffix": "%", "decimal": false, "label": "Statistical confidence on our best-performing test" }
+    {
+      "value": 23,
+      "suffix": "%+",
+      "decimal": false,
+      "label": "Highest CVR lift from a single A/B test"
+    },
+    {
+      "value": 534,
+      "prefix": "$",
+      "suffix": "K",
+      "decimal": false,
+      "label": "6 winner A/B tests"
+    },
+    {
+      "value": 100,
+      "suffix": "+",
+      "decimal": false,
+      "label": "Shopify & Shopify Plus stores audited"
+    },
+    {
+      "value": 100,
+      "suffix": "%",
+      "decimal": false,
+      "label": "Statistical confidence on our best-performing test"
+    }
   ]
 }
