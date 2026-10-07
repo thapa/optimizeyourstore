@@ -8,10 +8,10 @@
   "secondary_cta_link": "#results",
   "stats": [
     {
-      "value": 47,
+      "value": 100,
       "suffix": "+",
       "decimal": false,
-      "label": "Keep only with a real, defensible number"
+      "label": "Stores Audited"
     },
     {
       "value": 534,
