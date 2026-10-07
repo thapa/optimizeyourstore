@@ -16,7 +16,7 @@
     {
       "value": 10,
       "prefix": "$",
-      "suffix": "Millions/mo",
+      "suffix": "M/mo",
       "decimal": false,
       "label": "Revenue Added (at full rollout)"
     },
