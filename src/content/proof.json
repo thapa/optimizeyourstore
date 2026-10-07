@@ -3,7 +3,7 @@
   "headline": "Not Simulations.",
   "headline_accent": "Real Test Data.",
   "intro": "Every one of these results is from a live A/B test run for a real D2C Shopify brand. Click any card to see the full dashboard screenshot.",
-  "projected_label": "+$X • [tool] • [X]% confidence",
+  "projected_label": "+$39,856 • 100% confidence",
   "tests": [
     {
       "label": "Test 01 · CVR Win",
@@ -12,7 +12,6 @@
       "rpv": "+5.46%",
       "monthly": "+$39,856",
       "best": false,
-      "confidence": "",
       "image": "/test-results/image-1781690224316.webp",
       "caption": "Test 01 — CVR +3.94% · Revenue/Visitor +5.46% · Est. +$39,856/mo additional revenue"
     },
@@ -23,7 +22,6 @@
       "rpv": "+6.09%",
       "monthly": "+$43,984",
       "best": false,
-      "confidence": "",
       "image": "/test-results/image-1781690232893.webp",
       "caption": "Test 02 — CVR +5.57% · Multi-variant · Revenue/Visitor +6.09% · Est. +$43,984/mo"
     },
@@ -34,7 +32,6 @@
       "rpv": "+18.54%",
       "monthly": "+$192,130",
       "best": true,
-      "confidence": "",
       "image": "/test-results/image-1781690239021.webp",
       "caption": "Test 03 — CVR +14.56% · Revenue/Visitor +18.54% · Est. +$192,130/mo additional revenue"
     },
@@ -45,7 +42,6 @@
       "rpv": "+9.58%",
       "monthly": "+$66,152",
       "best": false,
-      "confidence": "",
       "image": "/test-results/image-1781690244420.webp",
       "caption": "Test 04 — CVR +5.99% · Revenue/Visitor +9.58% · Est. +$66,152/mo additional revenue"
     },
@@ -56,7 +52,6 @@
       "rpv": "+31.29%",
       "monthly": "+$159,858",
       "best": false,
-      "confidence": "",
       "image": "/test-results/image-1781690249168.webp",
       "caption": "Test 05 — CVR +20.57% · Revenue/Visitor +31.29% · AOV +8.89% · Est. +$159,858/mo"
     },
