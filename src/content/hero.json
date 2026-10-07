@@ -24,7 +24,7 @@
       "value": 23,
       "suffix": "%+",
       "decimal": true,
-      "label": "[+X]% CVR • [X]% confidence"
+      "label": "% CVR • 100% confidence"
     }
   ],
   "card_eyebrow": "What You Get",
