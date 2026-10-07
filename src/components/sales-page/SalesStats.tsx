@@ -2,7 +2,7 @@
 
 import { useEffect, useState, useRef } from 'react';
 import Lines from '../ui/Lines';
-import content from '@/content/stats.json';
+import { stats as content } from '@/content';
 
 function AnimatedCounter({
   target,
@@ -89,13 +89,13 @@ export default function SalesStats() {
 
         {/* Stats Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
-          {content.stats.map((stat, idx) => (
+          {(content.stats ?? []).map((stat, idx) => (
             <div
               key={idx}
               className="bg-white/[0.04] border border-white/[0.08] rounded-[24px] backdrop-blur-[24px] p-8 text-center transition-all duration-300 hover:bg-white/[0.06] hover:border-white/[0.12] hover:translate-y-[-4px]"
             >
               <div className="text-[44px] font-extrabold tracking-[-0.04em] mb-3 text-white leading-none bg-gradient-to-r from-white to-[#FF707C] bg-clip-text text-transparent inline-block">
-                <AnimatedCounter target={stat.value} prefix={stat.prefix} suffix={stat.suffix} decimal={stat.decimal} />
+                <AnimatedCounter target={stat.value ?? 0} prefix={stat.prefix} suffix={stat.suffix} decimal={stat.decimal} />
               </div>
               <p 
                 className="text-[14px] font-medium leading-relaxed text-white/50"

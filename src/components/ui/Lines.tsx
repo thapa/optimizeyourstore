@@ -1,8 +1,8 @@
 import { Fragment } from 'react';
 
 // Renders CMS text, turning each newline into a <br />.
-export default function Lines({ text }: { text: string }) {
-  const lines = text.split('\n');
+export default function Lines({ text }: { text?: string }) {
+  const lines = (text ?? '').split('\n');
   return (
     <>
       {lines.map((line, i) => (

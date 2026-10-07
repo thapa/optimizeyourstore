@@ -2,14 +2,14 @@
 
 import { useState, useEffect } from 'react';
 import { useModal } from '@/context/ModalContext';
-import content from '@/content/proof.json';
+import { proof as content } from '@/content';
 
 export default function SalesProof() {
   const { openModal } = useModal();
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
   const [imgErrors, setImgErrors] = useState<Record<number, boolean>>({});
 
-  const highlights = content.tests;
+  const highlights = content.tests ?? [];
 
   // Keypress event handler for lightbox navigation
   useEffect(() => {
@@ -94,11 +94,13 @@ export default function SalesProof() {
                   <span className="text-white/40">Rev/Visitor</span>
                   <span className="text-green-400 font-bold">{item.rpv}</span>
                 </div>
-                <div className="flex justify-between items-center text-[12px]">
-                  <span className="text-white/40">Projected/mo</span>
-                  <span className="text-[#FF707C] font-bold">{content.projected_label}</span>
-                  {/* <span className="text-[#FF707C] font-bold">{item.monthly}</span> */}
-                </div>
+                {content.projected_label && (
+                  <div className="flex justify-between items-center text-[12px]">
+                    <span className="text-white/40">Projected/mo</span>
+                    <span className="text-[#FF707C] font-bold">{content.projected_label}</span>
+                    {/* <span className="text-[#FF707C] font-bold">{item.monthly}</span> */}
+                  </div>
+                )}
               </div>
             </div>
           ))}
@@ -118,7 +120,7 @@ export default function SalesProof() {
                 {imgErrors[idx] ? (
                   <div className="w-full h-full bg-gradient-to-br from-[#1a1118] to-[#0e0b0d] flex flex-col items-center justify-center gap-2 relative">
                     <div className="text-[32px] font-extrabold text-green-400">{item.metric}</div>
-                    <div className="text-[12px] font-bold text-white/40">CVR Lift · {item.label.split(' · ')[1] || "A/B Test"}</div>
+                    <div className="text-[12px] font-bold text-white/40">CVR Lift · {item.label?.split(' · ')[1] || "A/B Test"}</div>
                   </div>
                 ) : (
                   <img

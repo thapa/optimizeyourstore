@@ -1,7 +1,7 @@
 'use client';
 
 import { useRef } from 'react';
-import content from '@/content/comparison.json';
+import { comparison as content } from '@/content';
 
 export default function SalesComparison() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -64,7 +64,7 @@ export default function SalesComparison() {
             </h3>
 
             <div className="flex flex-col gap-6.5 my-auto">
-              {content.old_way.map((item, idx) => (
+              {(content.old_way ?? []).map((item, idx) => (
                 <div key={idx} className="flex items-start gap-4">
                   <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-red-500/10 text-[#ff5c6a] text-[10px] font-bold mt-0.5 border border-red-500/20">
                     ✕
@@ -92,7 +92,7 @@ export default function SalesComparison() {
             </h3>
 
             <div className="flex flex-col gap-6.5 my-auto">
-              {content.new_way.map((item, idx) => (
+              {(content.new_way ?? []).map((item, idx) => (
                 <div key={idx} className="flex items-start gap-4">
                   <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-green-500/10 text-[#4ade80] text-[10px] font-bold mt-0.5 border border-green-500/20">
                     ✓

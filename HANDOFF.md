@@ -44,6 +44,11 @@ so each save triggers a redeploy. Styling, icons, and layout stay in the compone
 Headline fields labelled "multi-line" turn each new line into a `<br />` via
 `src/components/ui/Lines.tsx`. New screenshots upload to `public/test-results/`.
 
+**Components import content from `@/content` (`src/content/index.ts`), never the JSON directly.**
+Pages CMS deletes a key when an editor clears a field, so every field is typed optional and
+every component needs a fallback. Importing the JSON directly lets TypeScript infer the keys
+as required, and the next cleared field breaks the Vercel build (this happened 2026-10-07).
+
 ---
 
 ## Current Focus
@@ -66,6 +71,7 @@ machine, is not on the remote, and can be discarded at any time with
 
 ## Recent Changes
 
+- **2026-10-07 — Fixed Vercel build broken by a cleared CMS field.** Pages CMS removed `projected_label` from `proof.json`, which the code required. Added typed `src/content/index.ts` with all fields optional and fallbacks in every component; build verified with every content file emptied to `{}`.
 - **2026-10-07 — Pages CMS wired up.** Copy from all 12 sales-page sections moved into `src/content/*.json`; `.pages.yml` configured with one entry per section plus site settings. The rendered text is unchanged. `npm run build` passes.
 - **2026-08-04 — Sales page promoted to homepage.** `src/app/page.tsx` now renders the 12 `sales-page/` components with the CRO metadata; `alternates.canonical` added to all three routes pointing at `/`. The 10 old homepage components are orphaned on disk, not deleted. `npm run build` passes, 5 static routes.
 - **2026-08-04 — Hallmark redesign reverted to `stash@{0}`, not committed.** Working tree returned to `783bd2d` (== `origin/master`). See *Stashed Work* above for recovery commands. Tables below are the pre-redesign state.
@@ -75,7 +81,6 @@ machine, is not on the remote, and can be discarded at any time with
 - Updated contact email from `arun@convertiqx.com` / `arun@optimizeyourstore.com` to `hello@convertiqx.com` across all CTA sections, footers, and reference HTML files.
 - Updated `sales-page.html` and `src/components/Hero.tsx` with the new copy (headline "Your Ads Are Fine. Your Store Is the Leak.", subheadline "We find every conversion leak...", and primary CTA button "Find My Revenue Leaks") to align with Next.js CRO sales route.
 - Added the Guarantee Callout badge and the Price Anchor line under the pricing section of `sales-page.html`.
-- Updated final CTA copy and testimonials' brand/ad spend details in `sales-page.html`.
 
 ---
 

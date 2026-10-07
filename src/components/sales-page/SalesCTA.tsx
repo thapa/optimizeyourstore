@@ -3,8 +3,8 @@
 import GrainOverlay from "../ui/GrainOverlay";
 import { useModal } from "@/context/ModalContext";
 import Lines from "../ui/Lines";
-import content from "@/content/cta.json";
-import site from "@/content/site.json";
+import { cta as content } from "@/content";
+import { site } from "@/content";
 
 export default function SalesCTA() {
   const { openModal } = useModal();

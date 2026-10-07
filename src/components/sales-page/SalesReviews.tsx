@@ -1,7 +1,7 @@
 'use client';
 
 import Lines from '../ui/Lines';
-import content from '@/content/testimonials.json';
+import { testimonials as content } from '@/content';
 
 export default function SalesReviews() {
   return (
@@ -26,7 +26,7 @@ export default function SalesReviews() {
 
         {/* Testimonials Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-          {content.reviews.map((review, idx) => (
+          {(content.reviews ?? []).map((review, idx) => (
             <div
               key={idx}
               className="bg-white border border-[rgba(17,16,15,0.08)] rounded-[24px] shadow-[0_1px_2px_rgba(17,16,15,0.04),0_8px_24px_-12px_rgba(17,16,15,0.08)] p-8 md:p-10 transition-all duration-300 hover:translate-y-[-4px] hover:border-[rgba(17,16,15,0.16)] hover:shadow-[0_1px_2px_rgba(17,16,15,0.04),0_16px_32px_-12px_rgba(17,16,15,0.12)] flex flex-col justify-between"
@@ -51,7 +51,7 @@ export default function SalesReviews() {
               {/* Author */}
               <div className="flex items-center gap-4 mt-auto">
                 <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#FF707C] to-[#0E0B0D] flex items-center justify-center font-extrabold text-[13px] text-white shrink-0">
-                  {review.name.charAt(0)}
+                  {review.name?.charAt(0)}
                 </div>
                 
                 <div className="flex flex-col text-left">

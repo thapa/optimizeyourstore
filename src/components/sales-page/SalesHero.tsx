@@ -3,7 +3,7 @@
 import { useEffect, useState, useRef } from 'react';
 import HeroWebGL from '@/components/HeroWebGL';
 import { useModal } from '@/context/ModalContext';
-import content from '@/content/hero.json';
+import { hero as content } from '@/content';
 
 function AnimatedCounter({
   target,
@@ -156,13 +156,13 @@ export default function SalesHero() {
 
           {/* Stats pills */}
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 w-full max-w-[540px]">
-            {content.stats.map((stat, idx) => (
+            {(content.stats ?? []).map((stat, idx) => (
               <div
                 key={idx}
                 className={`${idx === 2 ? 'col-span-2 sm:col-span-1 ' : ''}flex flex-col gap-1 rounded-[14px] border border-white/[0.08] bg-white/[0.04] px-5.5 py-4 backdrop-blur-[10px] transition-all duration-200 hover:bg-white/[0.06] hover:border-white/[0.12] hover:-translate-y-0.5`}
               >
                 <div className="flex items-baseline gap-0.5 font-bold tracking-tight text-white text-[26px] leading-none">
-                  <AnimatedCounter target={stat.value} prefix={stat.prefix} suffix={stat.suffix} decimal={stat.decimal} />
+                  <AnimatedCounter target={stat.value ?? 0} prefix={stat.prefix} suffix={stat.suffix} decimal={stat.decimal} />
                 </div>
                 <span className="text-[12px] font-medium leading-tight text-white/40 mt-0.5">{stat.label}</span>
               </div>
@@ -193,7 +193,7 @@ export default function SalesHero() {
 
               {/* Deliverables List */}
               <div className="flex flex-col gap-2 mb-5">
-                {content.card_items.map((item) => (
+                {(content.card_items ?? []).map((item) => (
                   <div
                     key={item}
                     className="flex items-center gap-2.5 rounded-[10px] border border-white/[0.06] bg-white/[0.04] px-3.25 py-2.25"

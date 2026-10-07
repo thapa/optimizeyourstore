@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Lines from '../ui/Lines';
-import content from '@/content/faq.json';
+import { faq as content } from '@/content';
 
 export default function SalesFAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -33,7 +33,7 @@ export default function SalesFAQ() {
 
         {/* FAQs list */}
         <div className="max-w-[780px] mx-auto mt-12 flex flex-col">
-          {content.faqs.map((faq, idx) => {
+          {(content.faqs ?? []).map((faq, idx) => {
             const isOpen = openIndex === idx;
             return (
               <div 

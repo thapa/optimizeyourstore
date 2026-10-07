@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 import Lines from '../ui/Lines';
-import content from '@/content/problem.json';
+import { problem as content } from '@/content';
 
 export default function SalesProblem() {
   // Icons stay in code; they pair with problems by position and repeat if more are added.
@@ -67,7 +67,7 @@ export default function SalesProblem() {
         </div>
 
         <div className="mx-auto max-w-5xl grid grid-cols-1 md:grid-cols-2 gap-6">
-          {content.problems.map((problem, idx) => (
+          {(content.problems ?? []).map((problem, idx) => (
             <div
               key={idx}
               className="flex flex-col rounded-[24px] border border-[rgba(17,16,15,0.08)] bg-white p-8 md:p-10 shadow-[0_1px_2px_rgba(17,16,15,0.04),0_8px_24px_-12px_rgba(17,16,15,0.08)] transition-[border-color,box-shadow] duration-150 ease-[cubic-bezier(0.4,0,0.2,1)] hover:border-[rgba(17,16,15,0.16)] hover:shadow-[0_1px_2px_rgba(17,16,15,0.04),0_16px_32px_-12px_rgba(17,16,15,0.12)]"

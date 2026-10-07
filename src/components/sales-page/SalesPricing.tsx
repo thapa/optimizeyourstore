@@ -3,9 +3,9 @@
 import { useRef, MouseEvent } from 'react';
 import { useModal } from '@/context/ModalContext';
 import Lines from '../ui/Lines';
-import content from '@/content/pricing.json';
+import { pricing as content, type PricingPlan } from '@/content';
 
-type PriceCard = (typeof content.plans)[number];
+type PriceCard = PricingPlan;
 
 export default function SalesPricing() {
   const { openModal } = useModal();
@@ -105,7 +105,7 @@ export default function SalesPricing() {
         <hr className={`border-t mb-6 ${card.featured ? "border-white/10" : "border-[#11100F]/10"}`} />
 
         <ul className="flex flex-col gap-3.5 mb-10">
-          {card.features.map((feat, idx) => (
+          {(card.features ?? []).map((feat, idx) => (
             <li key={idx} className="flex items-start gap-3">
               <span className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-full border ${
                 card.featured
@@ -196,7 +196,7 @@ export default function SalesPricing() {
         {/* Cards Grid (Simplified 2-card layout) */}
         <div className="mx-auto w-full">
           <div className="mx-auto max-w-[820px] grid grid-cols-1 md:grid-cols-2 gap-8 justify-center items-stretch">
-            {content.plans.map((plan, idx) => (
+            {(content.plans ?? []).map((plan, idx) => (
               <div key={idx}>
                 <TiltCard card={plan} />
               </div>

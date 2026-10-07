@@ -3,7 +3,7 @@
 import Link from "next/link";
 import GrainOverlay from "../ui/GrainOverlay";
 import { useModal } from "@/context/ModalContext";
-import site from "@/content/site.json";
+import { site } from "@/content";
 
 export default function SalesFooter() {
   const { openModal } = useModal();

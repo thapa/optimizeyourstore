@@ -6,7 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import { useModal } from "@/context/ModalContext";
 import Lines from "../ui/Lines";
-import content from "@/content/process.json";
+import { process as content } from "@/content";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger, useGSAP);
@@ -94,7 +94,7 @@ export default function SalesMethod() {
 
             {/* Steps Container - space-y-24 adds rich layout spacing */}
             <div className="flex flex-col space-y-24 relative z-10">
-              {content.steps.map((step, idx) => {
+              {(content.steps ?? []).map((step, idx) => {
                 return (
                   <div 
                     key={idx} 
@@ -132,7 +132,7 @@ export default function SalesMethod() {
                           We deliver:
                         </span>
                         <div className="flex flex-wrap gap-1.5">
-                          {step.deliverables.map((item, idx2) => (
+                          {(step.deliverables ?? []).map((item, idx2) => (
                             <span 
                               key={idx2} 
                               className="inline-flex items-center px-2.5 py-0.5 rounded-md bg-[#11100F]/5 text-[#11100F]/75 text-xs font-medium border border-[#11100F]/5 transition-all duration-300 group-hover:bg-[#FF707C]/10 group-hover:text-[#FF707C] group-hover:border-[#FF707C]/10"
