@@ -1,5 +1,5 @@
 {
-  "badge": "CRO & A/B testing for D2C Shopify & Shopify Plus brands.",
+  "badge": "CRO & A/B testing for D2C Shopify & Shopify Plus brands...",
   "headline": "Your Ads Are Fine.",
   "headline_accent": "Your Store Is the Leak.",
   "subheadline": "Your ads aren't the problem — your store is leaking profit on every session you pay for. We find the leaks, size them in dollars, and test the fixes.",
@@ -7,9 +7,25 @@
   "secondary_cta": "See real test results",
   "secondary_cta_link": "#results",
   "stats": [
-    { "value": 47, "prefix": "", "suffix": "+", "decimal": false, "label": "Keep only with a real, defensible number" },
-    { "value": 534, "prefix": "$", "suffix": "K/mo", "decimal": false, "label": "Projected monthly impact (at full rollout)" },
-    { "value": 23, "prefix": "", "suffix": "%+", "decimal": true, "label": "[+X]% CVR • [X]% confidence" }
+    {
+      "value": 47,
+      "suffix": "+",
+      "decimal": false,
+      "label": "Keep only with a real, defensible number"
+    },
+    {
+      "value": 534,
+      "prefix": "$",
+      "suffix": "K/mo",
+      "decimal": false,
+      "label": "Projected monthly impact (at full rollout)"
+    },
+    {
+      "value": 23,
+      "suffix": "%+",
+      "decimal": true,
+      "label": "[+X]% CVR • [X]% confidence"
+    }
   ],
   "card_eyebrow": "What You Get",
   "card_title": "Revenue Leak Diagnostic",
