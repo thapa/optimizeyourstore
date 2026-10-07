@@ -1,0 +1,23 @@
+{
+  "eyebrow": "The Shift",
+  "headline": "The brands that scale don't buy more clicks.",
+  "headline_accent": "They earn more per click.",
+  "intro": "Doubling your budget won't save a store that leaks revenue. The most successful Shopify brands don't scale by simply buying more clicks—they scale because they make more money from the traffic they already have.",
+  "old_way_title": "The old way",
+  "old_way": [
+    { "text": "Launching new pages based on \"gut-feel\" and ", "bold": "praying they work" },
+    { "text": "Scaling a winner, watching ROAS drop, and ", "bold": "pulling the spend back" },
+    { "text": "Hiring agencies that send vanity reports while your ", "bold": "net profit drops" },
+    { "text": "Stacking buggy third-party Shopify apps that ", "bold": "bloat your site speed" },
+    { "text": "Watching visitors drop off at checkout and ", "bold": "not knowing why" }
+  ],
+  "new_way_title": "The new way",
+  "new_way": [
+    { "text": "Launching store variants backed by ", "bold": "real customer click and behavior data" },
+    { "text": "A store that converts paid traffic at a ", "bold": "higher profit per session" },
+    { "text": "Keep only if the retainer has a margin-linked component. Otherwise: Partnering with specialists who report on profit per session, ", "bold": "not vanity metrics." },
+    { "text": "Custom, lightweight code that keeps your ", "bold": "checkout lightning fast" },
+    { "text": "Knowing the exact bottleneck of your store and ", "bold": "fixing it systematically" }
+  ],
+  "callout": "If that sounds familiar, it is not because you are doing something wrong as a founder. It is because you have been trying to fix the traffic layer, when the actual leak is your store."
+}

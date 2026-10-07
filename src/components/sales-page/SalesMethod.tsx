@@ -5,17 +5,11 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import { useModal } from "@/context/ModalContext";
+import Lines from "../ui/Lines";
+import content from "@/content/process.json";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger, useGSAP);
-}
-
-interface Step {
-  numberStr: string;
-  title: string;
-  duration: string;
-  description: string;
-  deliverables: string;
 }
 
 export default function SalesMethod() {
@@ -26,37 +20,6 @@ export default function SalesMethod() {
 
   // Reset refs on each render
   stepRefs.current = [];
-
-  const steps: Step[] = [
-    {
-      numberStr: "01",
-      title: "Audit & Research",
-      duration: "Days 1–7",
-      description: "We dig deep into your analytics, heatmaps, session recordings, and customer feedback to find every revenue leak in your store.",
-      deliverables: "We deliver: analytics audit · heatmaps report · research logs"
-    },
-    {
-      numberStr: "02",
-      title: "Strategy & Hypotheses",
-      duration: "Days 8–10",
-      description: "We build a prioritised test backlog using our ICE framework — Impact, Confidence, Ease — so we always run the highest-value tests first.",
-      deliverables: "We deliver: ICE test backlog · wireframes · UX roadmap"
-    },
-    {
-      numberStr: "03",
-      title: "Test & Iterate",
-      duration: "Ongoing sprints",
-      description: "Tests are designed, built, QA'd, and launched on your Shopify store. Each test runs to a pre-set sample size and decision rule — results are real, not peeked.",
-      deliverables: "We deliver: variant setups · QA sign-off · live A/B tests"
-    },
-    {
-      numberStr: "04",
-      title: "Analyse & Scale",
-      duration: "Compounding monthly",
-      description: "Winners are implemented permanently. Losers teach us something new. Every sprint compounds on the last — revenue grows month over month.",
-      deliverables: "We deliver: performance analysis · revenue reports · roadmap updates"
-    }
-  ];
 
   useGSAP(() => {
     // ScrollTrigger to animate the active progress line scaleY
@@ -93,16 +56,16 @@ export default function SalesMethod() {
               className="text-sm font-medium uppercase tracking-[0.08em] mb-4"
               style={{ color: "#FF707C", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
             >
-              Our Process
+              {content.eyebrow}
             </p>
             <h2 
               className="text-[#11100F] font-semibold tracking-[-0.025em] text-[clamp(2rem,4vw,3.5rem)] leading-[1.2] max-w-[24.5rem] mb-4"
               style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
             >
-              From Audit to<br />Revenue Growth
+              <Lines text={content.headline} />
             </h2>
             <p className="text-[#11100F]/70 text-sm font-medium leading-relaxed max-w-[24.5rem] mb-8">
-              A clear, systematic process that turns data into decisions and decisions into revenue — every single month.
+              {content.intro}
             </p>
 
             {/* Primary CTA */}
@@ -112,7 +75,7 @@ export default function SalesMethod() {
                 onClick={openModal}
                 className="inline-flex items-center justify-center bg-[#ff5c6a] text-white rounded-full px-6 py-3 text-sm font-semibold transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-[1.04] active:scale-[0.98] focus:outline-hidden focus-visible:ring-2 focus-visible:ring-[#FF707C] shadow-sm cursor-pointer"
               >
-                Get My Revenue Leak Diagnostic &rarr;
+                {content.cta}
               </button>
               <div className="w-1 h-1 rounded-[1px] absolute -bottom-1 -right-1 bg-black/30"></div>
             </div>
@@ -131,12 +94,7 @@ export default function SalesMethod() {
 
             {/* Steps Container - space-y-24 adds rich layout spacing */}
             <div className="flex flex-col space-y-24 relative z-10">
-              {steps.map((step, idx) => {
-                // Parse deliverables into a prefix and array of pill items
-                const parts = step.deliverables.split(": ");
-                const prefix = parts[0] + ":";
-                const items = parts[1] ? parts[1].split(" · ") : [];
-
+              {content.steps.map((step, idx) => {
                 return (
                   <div 
                     key={idx} 
@@ -146,7 +104,7 @@ export default function SalesMethod() {
                     {/* Circle - Upgraded to 44px touch target size */}
                     <div className="w-11 h-11 bg-white border border-[#11100F]/[0.16] rounded-full flex items-center justify-center shrink-0 relative z-10 transition-all duration-300 group-hover:border-[#FF707C] group-hover:bg-[#FF707C] shadow-sm">
                       <span className="text-[#11100F] font-semibold text-sm transition-colors duration-300 group-hover:text-white">
-                        {step.numberStr}
+                        {String(idx + 1).padStart(2, '0')}
                       </span>
                     </div>
 
@@ -171,10 +129,10 @@ export default function SalesMethod() {
                       {/* Premium Deliverables Chips layout */}
                       <div className="flex flex-wrap items-center gap-2 mt-1">
                         <span className="text-[#11100F]/60 font-semibold text-[11px] uppercase tracking-wider">
-                          {prefix}
+                          We deliver:
                         </span>
                         <div className="flex flex-wrap gap-1.5">
-                          {items.map((item, idx2) => (
+                          {step.deliverables.map((item, idx2) => (
                             <span 
                               key={idx2} 
                               className="inline-flex items-center px-2.5 py-0.5 rounded-md bg-[#11100F]/5 text-[#11100F]/75 text-xs font-medium border border-[#11100F]/5 transition-all duration-300 group-hover:bg-[#FF707C]/10 group-hover:text-[#FF707C] group-hover:border-[#FF707C]/10"

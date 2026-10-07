@@ -1,0 +1,302 @@
+# Pages CMS configuration — https://pagescms.org/docs/configuration/
+# Every editable string on the homepage (/, /sales, /sales-page) lives in src/content/*.json.
+# Headlines marked "multi-line" render each new line as a line break.
+
+media:
+  input: public/test-results
+  output: /test-results
+
+content:
+  # ───────────────────────── Site-wide ─────────────────────────
+  - name: site
+    label: Site settings
+    type: file
+    path: src/content/site.json
+    format: json
+    fields:
+      - { name: email, label: Contact email, type: string, required: true }
+      - { name: linkedin_url, label: LinkedIn URL, type: string }
+      - { name: x_url, label: X / Twitter URL, type: string }
+      - { name: footer_tagline, label: Footer tagline, type: text }
+      - { name: footer_copyright, label: Footer copyright line, type: string }
+      - { name: footer_note, label: Footer note (bottom right), type: string }
+
+  # ───────────────────────── 1. Hero ─────────────────────────
+  - name: hero
+    label: "1 · Hero"
+    type: file
+    path: src/content/hero.json
+    format: json
+    fields:
+      - { name: badge, label: Top badge, type: string }
+      - { name: headline, label: Headline (white line), type: string }
+      - { name: headline_accent, label: Headline (gradient line), type: string }
+      - { name: subheadline, label: Sub-headline, type: text }
+      - { name: primary_cta, label: Primary button label (opens inquiry form), type: string }
+      - { name: secondary_cta, label: Secondary button label, type: string }
+      - { name: secondary_cta_link, label: Secondary button link, type: string, description: "An on-page anchor like #results, or a full URL" }
+      - name: stats
+        label: Stat pills
+        type: object
+        list: { min: 3, max: 3 }
+        fields:
+          - { name: value, label: Number (animated), type: number }
+          - { name: prefix, label: Prefix, type: string, description: "e.g. $" }
+          - { name: suffix, label: Suffix, type: string, description: "e.g. +, %+, K/mo" }
+          - { name: decimal, label: Show one decimal place, type: boolean }
+          - { name: label, label: Caption, type: string }
+      - { name: card_eyebrow, label: Floating card — eyebrow, type: string }
+      - { name: card_title, label: Floating card — title, type: string }
+      - { name: card_badge, label: Floating card — badge, type: string }
+      - { name: card_items, label: Floating card — checklist, type: string, list: true }
+
+  # ───────────────────────── 2. Problem ─────────────────────────
+  - name: problem
+    label: "2 · The Problem"
+    type: file
+    path: src/content/problem.json
+    format: json
+    fields:
+      - { name: eyebrow, label: Eyebrow, type: string }
+      - { name: headline, label: Headline (multi-line), type: text }
+      - { name: intro, label: Intro, type: text }
+      - name: problems
+        label: Problem cards
+        type: object
+        list: true
+        description: Icons are assigned by position and repeat after the fourth card.
+        fields:
+          - { name: title, label: Title, type: string }
+          - { name: description, label: Description, type: text }
+
+  # ───────────────────────── 3. Comparison ─────────────────────────
+  - name: comparison
+    label: "3 · Old way vs New way"
+    type: file
+    path: src/content/comparison.json
+    format: json
+    fields:
+      - { name: eyebrow, label: Eyebrow, type: string }
+      - { name: headline, label: Headline (white line), type: string }
+      - { name: headline_accent, label: Headline (pink line), type: string }
+      - { name: intro, label: Intro, type: text }
+      - { name: old_way_title, label: Left card title, type: string }
+      - name: old_way
+        label: Left card items
+        type: object
+        list: true
+        fields:
+          - { name: text, label: Text, type: string, description: "Include a trailing space before the bold part" }
+          - { name: bold, label: Bold ending, type: string }
+      - { name: new_way_title, label: Right card title, type: string }
+      - name: new_way
+        label: Right card items
+        type: object
+        list: true
+        fields:
+          - { name: text, label: Text, type: string, description: "Include a trailing space before the bold part" }
+          - { name: bold, label: Bold ending, type: string }
+      - { name: callout, label: Bottom callout, type: text }
+
+  # ───────────────────────── 4. Services ─────────────────────────
+  - name: services
+    label: "4 · Services"
+    type: file
+    path: src/content/services.json
+    format: json
+    fields:
+      - { name: eyebrow, label: Eyebrow, type: string }
+      - { name: headline, label: Headline (multi-line), type: text }
+      - { name: intro, label: Intro, type: text }
+      - name: service_1
+        label: Service 01
+        type: object
+        fields:
+          - { name: label, label: Label, type: string }
+          - { name: title, label: Title, type: string }
+          - { name: description, label: Description, type: text }
+          - name: items
+            label: What's included
+            type: object
+            list: true
+            fields:
+              - { name: bold, label: Bold lead-in (optional), type: string }
+              - { name: text, label: Text, type: string }
+          - { name: cta, label: Button label, type: string }
+          - { name: sample_finding, label: Mock-up card — sample finding, type: text }
+      - name: service_2
+        label: Service 02
+        type: object
+        fields:
+          - { name: label, label: Label, type: string }
+          - { name: title, label: Title, type: string }
+          - { name: description, label: Description, type: text }
+          - name: items
+            label: What's included
+            type: object
+            list: true
+            fields:
+              - { name: bold, label: Bold lead-in (optional), type: string }
+              - { name: text, label: Text, type: string }
+          - { name: cta, label: Button label, type: string }
+          - { name: control_cvr, label: Mock-up — control CVR, type: string }
+          - { name: variant_cvr, label: Mock-up — variant CVR, type: string }
+          - { name: cvr_lift, label: Mock-up — CVR lift, type: string }
+          - { name: control_aov, label: Mock-up — control AOV, type: string }
+          - { name: variant_aov, label: Mock-up — variant AOV, type: string }
+          - { name: aov_lift, label: Mock-up — AOV lift, type: string }
+          - { name: rpv_lift, label: Mock-up — revenue/visitor lift, type: string }
+          - { name: projected_impact, label: Mock-up — projected impact, type: string }
+
+  # ───────────────────────── 5. Process ─────────────────────────
+  - name: process
+    label: "5 · Process"
+    type: file
+    path: src/content/process.json
+    format: json
+    fields:
+      - { name: eyebrow, label: Eyebrow, type: string }
+      - { name: headline, label: Headline (multi-line), type: text }
+      - { name: intro, label: Intro, type: text }
+      - { name: cta, label: Button label (opens inquiry form), type: string }
+      - name: steps
+        label: Steps
+        type: object
+        list: true
+        description: Steps are numbered automatically (01, 02, …).
+        fields:
+          - { name: title, label: Title, type: string }
+          - { name: duration, label: Duration, type: string }
+          - { name: description, label: Description, type: text }
+          - { name: deliverables, label: Deliverables, type: string, list: true }
+
+  # ───────────────────────── 6. Proof ─────────────────────────
+  - name: proof
+    label: "6 · Test results"
+    type: file
+    path: src/content/proof.json
+    format: json
+    fields:
+      - { name: eyebrow, label: Eyebrow, type: string }
+      - { name: headline, label: Headline (white line), type: string }
+      - { name: headline_accent, label: Headline (gradient line), type: string }
+      - { name: intro, label: Intro, type: text }
+      - { name: projected_label, label: "\"Projected/mo\" value on every card", type: string }
+      - name: tests
+        label: Tests
+        type: object
+        list: true
+        fields:
+          - { name: label, label: Label, type: string, description: "e.g. Test 01 · CVR Win" }
+          - { name: metric, label: CVR lift, type: string }
+          - { name: sub, label: Metric caption, type: string }
+          - { name: rpv, label: Revenue/visitor lift, type: string }
+          - { name: monthly, label: Monthly lift (shown if screenshot fails to load), type: string }
+          - { name: best, label: Show "BEST" badge, type: boolean }
+          - { name: confidence, label: Confidence badge (optional), type: string, description: "e.g. 99%" }
+          - { name: image, label: Dashboard screenshot, type: image }
+          - { name: caption, label: Screenshot caption, type: text }
+      - { name: banner_eyebrow, label: Banner — eyebrow, type: string }
+      - { name: banner_amount, label: Banner — amount, type: string }
+      - { name: banner_text, label: Banner — text, type: text }
+      - { name: banner_cta, label: Banner — button label, type: string }
+
+  # ───────────────────────── 7. Stats ─────────────────────────
+  - name: stats
+    label: "7 · Stats"
+    type: file
+    path: src/content/stats.json
+    format: json
+    fields:
+      - { name: eyebrow, label: Eyebrow, type: string }
+      - { name: headline, label: Headline (multi-line), type: text }
+      - { name: intro, label: Intro, type: text }
+      - name: stats
+        label: Stats
+        type: object
+        list: true
+        fields:
+          - { name: value, label: Number (animated), type: number }
+          - { name: prefix, label: Prefix, type: string }
+          - { name: suffix, label: Suffix, type: string }
+          - { name: decimal, label: Show one decimal place, type: boolean }
+          - { name: label, label: Caption, type: string }
+
+  # ───────────────────────── 8. Testimonials ─────────────────────────
+  - name: testimonials
+    label: "8 · Testimonials"
+    type: file
+    path: src/content/testimonials.json
+    format: json
+    fields:
+      - { name: eyebrow, label: Eyebrow, type: string }
+      - { name: headline, label: Headline (multi-line), type: text }
+      - name: reviews
+        label: Reviews
+        type: object
+        list: true
+        fields:
+          - { name: quote, label: Quote, type: text }
+          - { name: name, label: Name, type: string, description: The first letter becomes the avatar }
+          - { name: role, label: Role / company, type: string }
+
+  # ───────────────────────── 9. Pricing ─────────────────────────
+  - name: pricing
+    label: "9 · Pricing"
+    type: file
+    path: src/content/pricing.json
+    format: json
+    fields:
+      - { name: guarantee, label: Guarantee badge, type: text }
+      - { name: eyebrow, label: Eyebrow, type: string }
+      - { name: headline, label: Headline (multi-line), type: text }
+      - { name: intro, label: Intro, type: text }
+      - { name: price_anchor, label: Price anchor line, type: text }
+      - { name: featured_badge, label: Featured plan badge, type: string }
+      - name: plans
+        label: Plans
+        type: object
+        list: true
+        fields:
+          - { name: tier, label: Tier pill, type: string }
+          - { name: name, label: Plan name, type: string }
+          - { name: description, label: Description, type: text }
+          - { name: currency, label: Currency symbol, type: string }
+          - { name: amount, label: Price, type: string, description: "e.g. 1,497 — or text like 'Scoped on Call'" }
+          - { name: custom_amount, label: Price is text (hide currency), type: boolean }
+          - { name: period, label: Period, type: string }
+          - { name: note, label: Note, type: string }
+          - { name: cta, label: Button label (opens inquiry form), type: string }
+          - { name: featured, label: Featured (dark card + badge), type: boolean }
+          - { name: features, label: Features, type: string, list: true }
+
+  # ───────────────────────── 10. FAQ ─────────────────────────
+  - name: faq
+    label: "10 · FAQ"
+    type: file
+    path: src/content/faq.json
+    format: json
+    fields:
+      - { name: eyebrow, label: Eyebrow, type: string }
+      - { name: headline, label: Headline (multi-line), type: text }
+      - name: faqs
+        label: Questions
+        type: object
+        list: true
+        fields:
+          - { name: question, label: Question, type: string }
+          - { name: answer, label: Answer, type: text }
+
+  # ───────────────────────── 11. Final CTA ─────────────────────────
+  - name: cta
+    label: "11 · Final CTA"
+    type: file
+    path: src/content/cta.json
+    format: json
+    fields:
+      - { name: badge, label: Badge, type: string }
+      - { name: headline, label: Headline (multi-line), type: text }
+      - { name: body, label: Body, type: text }
+      - { name: primary_cta, label: Primary button label (opens inquiry form), type: string }
+      - { name: secondary_cta, label: Secondary button label (emails you), type: string }
+      - { name: reassurance, label: Reassurance line, type: text }

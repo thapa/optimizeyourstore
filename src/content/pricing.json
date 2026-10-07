@@ -1,0 +1,50 @@
+{
+  "guarantee": "If we can't show you a leak sized in dollars from your own data, full refund.",
+  "eyebrow": "Transparent Pricing",
+  "headline": "Investment That\nPays for Itself",
+  "intro": "Choose the service that fits where you are. Start with a strategy consultation or go straight into a full CRO retainer.",
+  "price_anchor": "Start with the Diagnostic. Move to the retainer within 30 days and the full $1,497 is credited.",
+  "featured_badge": "Most Popular",
+  "plans": [
+    {
+      "tier": "CRO Strategy Audit",
+      "name": "Revenue Leak Diagnostic",
+      "description": "A comprehensive deep-dive into your store ecosystem to map out and prioritize every conversion leak.",
+      "currency": "$",
+      "amount": "1,497",
+      "custom_amount": false,
+      "period": "one-time project",
+      "note": "Delivered within 10 business days",
+      "cta": "Get My Diagnostic",
+      "featured": false,
+      "features": [
+        "Funnel model from your GA4 + Shopify data",
+        "Clarity behavioral analysis",
+        "Unit economics & profit-lever review",
+        "Traffic-feasibility verdict",
+        "Ranked 90-day test roadmap",
+        "60-min walkthrough call"
+      ]
+    },
+    {
+      "tier": "CRO Retainer",
+      "name": "Growth Retainer",
+      "description": "A fully managed ongoing testing and optimization program for high-growth Shopify brands.",
+      "currency": "",
+      "amount": "Scoped on Call",
+      "custom_amount": true,
+      "period": "monthly retainer",
+      "note": "3-month minimum engagement",
+      "cta": "Apply for the Retainer",
+      "featured": true,
+      "features": [
+        "Test cadence set by your traffic and MDE — calculated in the Diagnostic",
+        "End-to-end execution (design, copy, custom dev)",
+        "Bi-weekly strategy review & planning calls",
+        "Shopify Plus checkout & flow optimization",
+        "Priority Slack access (same-day response)",
+        "Winners shipped permanently. Every test documented."
+      ]
+    }
+  ]
+}

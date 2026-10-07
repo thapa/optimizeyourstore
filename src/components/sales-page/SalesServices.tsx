@@ -1,5 +1,8 @@
 'use client';
 
+import Lines from '../ui/Lines';
+import content from '@/content/services.json';
+
 export default function SalesServices() {
   const checkIcon = (
     <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#ff5c6a]/10 border border-[#ff5c6a]/30 text-[#ff5c6a] mt-0.5">
@@ -22,13 +25,13 @@ export default function SalesServices() {
             className="mb-4 text-[14px] font-medium uppercase tracking-[0.08em]"
             style={{ color: "#FF707C", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
           >
-            What We Do
+            {content.eyebrow}
           </p>
           <h2
             className="mx-auto max-w-[48rem] text-[clamp(2rem,4vw,3.5rem)] font-semibold leading-[1.2] tracking-[-0.025em] text-[#11100F]"
             style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
           >
-            Two Services.<br />One Goal: More Revenue.
+            <Lines text={content.headline} />
           </h2>
           <p
             className="mx-auto mt-6 max-w-2xl text-[14px] font-medium leading-[22px]"
@@ -37,7 +40,7 @@ export default function SalesServices() {
               fontFamily: "'Plus Jakarta Sans', sans-serif",
             }}
           >
-            Whether you need a clear strategic roadmap or a full ongoing CRO partnership, we have a model built for your stage.
+            {content.intro}
           </p>
         </div>
 
@@ -46,30 +49,23 @@ export default function SalesServices() {
           {/* Text Content */}
           <div className="flex flex-col items-start text-left">
             <span className="text-[12px] font-bold tracking-[0.10em] uppercase text-[#FF707C] mb-4">
-              Service 01
+              {content.service_1.label}
             </span>
             <h3 
               className="text-[#11100F] font-semibold tracking-[-0.025em] text-[clamp(24px,3.6vw,42px)] leading-[1.15] mb-5"
               style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
             >
-              Revenue Leak Diagnostic
+              {content.service_1.title}
             </h3>
             <p className="text-[#11100F]/70 text-base leading-relaxed mb-8">
-              A dollar-sized map of where your store loses profit per session — and exactly what to test first.
+              {content.service_1.description}
             </p>
             
             <p className="text-[12px] font-bold tracking-[0.08em] uppercase text-[#11100F]/40 mb-4">
               What's included
             </p>
             <ul className="flex flex-col gap-3.5 mb-10 w-full">
-              {[
-                { bold: "", text: "Funnel model from your GA4 + Shopify data" },
-                { bold: "", text: "Clarity behavioral analysis" },
-                { bold: "", text: "Unit economics & profit-lever review" },
-                { bold: "", text: "Traffic-feasibility verdict" },
-                { bold: "", text: "Ranked 90-day test roadmap" },
-                { bold: "", text: "60-min walkthrough call" },
-              ].map((item, idx) => (
+              {content.service_1.items.map((item, idx) => (
                 <li key={idx} className="flex items-start gap-3 text-[15px] text-[#11100F]/70">
                   {checkIcon}
                   <span>
@@ -84,7 +80,7 @@ export default function SalesServices() {
                 href="#pricing"
                 className="inline-flex items-center justify-center bg-[#ff5c6a] text-white rounded-full px-7 py-3.5 text-sm font-semibold transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-[1.04] active:scale-[0.98] shadow-sm"
               >
-                View Pricing
+                {content.service_1.cta}
                 <svg className="transition-transform duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)] ml-2" width="14" height="14" viewBox="0 0 14 14" fill="none">
                   <path d="M2.5 7h9M8 3.5l3.5 3.5L8 10.5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
@@ -130,7 +126,7 @@ export default function SalesServices() {
               <div className="mt-6 p-4 bg-[#FF707C]/5 border border-[#FF707C]/20 rounded-xl">
                 <div className="text-[12px] font-bold text-[#ff5c6a] mb-1">🚨 Sample Finding</div>
                 <div className="text-[13px] text-[#11100F]/80 leading-relaxed font-medium">
-                  Checkout abandonment at 78% — primary CTA above the fold is competing with 3 other CTAs.
+                  {content.service_1.sample_finding}
                 </div>
               </div>
             </div>
@@ -157,26 +153,26 @@ export default function SalesServices() {
               {/* AB metrics grid */}
               <div className="grid grid-cols-2 gap-3 mb-4">
                 <div className="flex flex-col px-4.5 py-3.5 bg-[#F7F5F2] border border-[rgba(17,16,15,0.04)] rounded-xl">
-                  <span className="text-[24px] font-extrabold text-[#11100F] tracking-tight">5.15%</span>
+                  <span className="text-[24px] font-extrabold text-[#11100F] tracking-tight">{content.service_2.control_cvr}</span>
                   <span className="text-[11px] font-bold text-[#11100F]/40 mt-1 uppercase">Control CVR</span>
                   <span className="inline-flex self-start px-2 py-0.5 rounded-md bg-[#11100F]/5 text-[#11100F]/50 text-[10px] font-bold mt-2">Baseline</span>
                 </div>
                 
                 <div className="flex flex-col px-4.5 py-3.5 bg-green-50/50 border border-green-100 rounded-xl">
-                  <span className="text-[24px] font-extrabold text-green-600 tracking-tight">6.21%</span>
+                  <span className="text-[24px] font-extrabold text-green-600 tracking-tight">{content.service_2.variant_cvr}</span>
                   <span className="text-[11px] font-bold text-[#11100F]/40 mt-1 uppercase">Variant CVR</span>
-                  <span className="inline-flex self-start px-2 py-0.5 rounded-md bg-green-100/50 text-green-700 text-[10px] font-bold mt-2">▲ +20.57% lift</span>
+                  <span className="inline-flex self-start px-2 py-0.5 rounded-md bg-green-100/50 text-green-700 text-[10px] font-bold mt-2">▲ {content.service_2.cvr_lift} lift</span>
                 </div>
 
                 <div className="flex flex-col px-4.5 py-3.5 bg-[#F7F5F2] border border-[rgba(17,16,15,0.04)] rounded-xl">
-                  <span className="text-[24px] font-extrabold text-[#11100F] tracking-tight">$55.29</span>
+                  <span className="text-[24px] font-extrabold text-[#11100F] tracking-tight">{content.service_2.control_aov}</span>
                   <span className="text-[11px] font-bold text-[#11100F]/40 mt-1 uppercase">Control AOV</span>
                 </div>
 
                 <div className="flex flex-col px-4.5 py-3.5 bg-green-50/50 border border-green-100 rounded-xl">
-                  <span className="text-[24px] font-extrabold text-green-600 tracking-tight">$60.20</span>
+                  <span className="text-[24px] font-extrabold text-green-600 tracking-tight">{content.service_2.variant_aov}</span>
                   <span className="text-[11px] font-bold text-[#11100F]/40 mt-1 uppercase">Variant AOV</span>
-                  <span className="inline-flex self-start px-2 py-0.5 rounded-md bg-green-100/50 text-green-700 text-[10px] font-bold mt-2">▲ +8.89% lift</span>
+                  <span className="inline-flex self-start px-2 py-0.5 rounded-md bg-green-100/50 text-green-700 text-[10px] font-bold mt-2">▲ {content.service_2.aov_lift} lift</span>
                 </div>
               </div>
 
@@ -184,11 +180,11 @@ export default function SalesServices() {
               <div className="flex flex-col gap-2">
                 <div className="flex justify-between items-center px-4 py-3.5 bg-green-50/20 border border-green-100/50 rounded-xl">
                   <span className="text-[13px] font-semibold text-[#11100F]/75">Revenue per Visitor Lift</span>
-                  <span className="text-[15px] font-bold text-green-600">+31.29%</span>
+                  <span className="text-[15px] font-bold text-green-600">{content.service_2.rpv_lift}</span>
                 </div>
                 <div className="flex justify-between items-center px-4 py-3.5 bg-[#FF707C]/5 border border-[#FF707C]/15 rounded-xl">
                   <span className="text-[13px] font-semibold text-[#11100F]/75">Projected impact at full rollout:</span>
-                  <span className="text-[15px] font-bold text-[#ff5c6a]">+$159,858/mo</span>
+                  <span className="text-[15px] font-bold text-[#ff5c6a]">{content.service_2.projected_impact}</span>
                 </div>
               </div>
             </div>
@@ -197,30 +193,23 @@ export default function SalesServices() {
           {/* Text Content (second on desktop, first on mobile) */}
           <div className="flex flex-col items-start text-left order-1 lg:order-2">
             <span className="text-[12px] font-bold tracking-[0.10em] uppercase text-[#FF707C] mb-4">
-              Service 02
+              {content.service_2.label}
             </span>
             <h3 
               className="text-[#11100F] font-semibold tracking-[-0.025em] text-[clamp(24px,3.6vw,42px)] leading-[1.15] mb-5"
               style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
             >
-              CRO & A/B Testing for D2C Shopify & Shopify Plus Brands
+              {content.service_2.title}
             </h3>
             <p className="text-[#11100F]/70 text-base leading-relaxed mb-8">
-              A fully managed, data-driven CRO programme for D2C Shopify and Shopify Plus brands. We research, design, run, and analyse experiments every month — you see the lift in conversion rate, AOV and revenue per visitor.
+              {content.service_2.description}
             </p>
             
             <p className="text-[12px] font-bold tracking-[0.08em] uppercase text-[#11100F]/40 mb-4">
               What's included
             </p>
             <ul className="flex flex-col gap-3.5 mb-10 w-full">
-              {[
-                { bold: "Ongoing CRO Audit", text: " — Continuous monitoring and new opportunity identification" },
-                { bold: "ICE-Scored Hypothesis Bank", text: " — Research-backed, prioritised test backlog" },
-                { bold: "Full Test Design & Implementation", text: " — We build, QA, and launch every test" },
-                { bold: "Statistical Analysis & Reporting", text: " — Full test reports with actionable insights" },
-                { bold: "Monthly Strategy Calls", text: " — Review results, plan next sprint, align on goals" },
-                { bold: "Shopify Plus", text: " — Checkout Extensibility, Shopify Functions, custom flows (Scripts are deprecated)" },
-              ].map((item, idx) => (
+              {content.service_2.items.map((item, idx) => (
                 <li key={idx} className="flex items-start gap-3 text-[15px] text-[#11100F]/70">
                   {checkIcon}
                   <span>
@@ -235,7 +224,7 @@ export default function SalesServices() {
                 href="#pricing"
                 className="inline-flex items-center justify-center bg-[#ff5c6a] text-white rounded-full px-7 py-3.5 text-sm font-semibold transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-[1.04] active:scale-[0.98] shadow-sm"
               >
-                View Pricing
+                {content.service_2.cta}
                 <svg className="transition-transform duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)] ml-2" width="14" height="14" viewBox="0 0 14 14" fill="none">
                   <path d="M2.5 7h9M8 3.5l3.5 3.5L8 10.5" stroke="currentColor" stroke-width="1.8" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>

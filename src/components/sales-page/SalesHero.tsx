@@ -3,6 +3,7 @@
 import { useEffect, useState, useRef } from 'react';
 import HeroWebGL from '@/components/HeroWebGL';
 import { useModal } from '@/context/ModalContext';
+import content from '@/content/hero.json';
 
 function AnimatedCounter({
   target,
@@ -115,18 +116,18 @@ export default function SalesHero() {
           {/* Trust Badge */}
           <div className="inline-flex items-center gap-2.5 rounded-full border px-4.5 py-2 text-[13px] font-semibold text-[#FF707C] mb-8 bg-[#FF707C]/8 border-[#FF707C]/30 animate-fadeUp">
             <span className="w-1.75 h-1.75 rounded-full bg-[#FF707C] animate-dot-pulse" />
-            CRO & A/B testing for D2C Shopify & Shopify Plus brands.
+            {content.badge}
           </div>
 
           {/* Headline */}
           <h1 className="text-white text-[clamp(28px,7.5vw,42px)] sm:text-[clamp(38px,8vw,56px)] lg:text-[clamp(48px,6.5vw,82px)] font-extrabold tracking-[-0.03em] leading-[1.08] w-full mb-7">
-            Your Ads Are Fine.<br />
-            <span className="text-gradient">Your Store Is the Leak.</span>
+            {content.headline}<br />
+            <span className="text-gradient">{content.headline_accent}</span>
           </h1>
 
           {/* Sub-headline */}
           <p className="text-white/70 text-base md:text-[19px] leading-relaxed max-w-[580px] mb-11">
-            Your ads aren't the problem — your store is leaking profit on every session you pay for. We find the leaks, size them in dollars, and test the fixes.
+            {content.subheadline}
           </p>
 
           {/* CTAs */}
@@ -137,7 +138,7 @@ export default function SalesHero() {
                 onClick={openModal}
                 className="inline-flex items-center justify-center gap-2 rounded-full bg-[#FF707C] px-7 py-4 text-[15px] font-semibold text-[#0E0B0D] transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-[1.04] active:scale-[0.98] shadow-[0_4px_20px_rgba(255,112,124,0.15)] hover:shadow-[0_8px_32px_rgba(255,112,124,0.3)] hover:bg-[#ff5c6a] w-full sm:w-auto cursor-pointer"
               >
-                Get My Revenue Leak Diagnostic
+                {content.primary_cta}
                 <svg className="transition-transform duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)] group-hover:translate-x-1" width="16" height="16" viewBox="0 0 16 16" fill="none">
                   <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
@@ -146,35 +147,26 @@ export default function SalesHero() {
             </div>
 
             <a
-              href="#results"
+              href={content.secondary_cta_link}
               className="inline-flex items-center justify-center gap-2 rounded-full border border-white/25 px-7 py-4 text-[15px] font-medium text-white/70 backdrop-blur-sm transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-[1.02] hover:border-white/50 hover:text-white active:scale-[0.98] w-full sm:w-auto"
             >
-              See real test results
+              {content.secondary_cta}
             </a>
           </div>
 
           {/* Stats pills */}
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 w-full max-w-[540px]">
-            <div className="flex flex-col gap-1 rounded-[14px] border border-white/[0.08] bg-white/[0.04] px-5.5 py-4 backdrop-blur-[10px] transition-all duration-200 hover:bg-white/[0.06] hover:border-white/[0.12] hover:-translate-y-0.5">
-              <div className="flex items-baseline gap-0.5 font-bold tracking-tight text-white text-[26px] leading-none">
-                <AnimatedCounter target={47} suffix="+" />
+            {content.stats.map((stat, idx) => (
+              <div
+                key={idx}
+                className={`${idx === 2 ? 'col-span-2 sm:col-span-1 ' : ''}flex flex-col gap-1 rounded-[14px] border border-white/[0.08] bg-white/[0.04] px-5.5 py-4 backdrop-blur-[10px] transition-all duration-200 hover:bg-white/[0.06] hover:border-white/[0.12] hover:-translate-y-0.5`}
+              >
+                <div className="flex items-baseline gap-0.5 font-bold tracking-tight text-white text-[26px] leading-none">
+                  <AnimatedCounter target={stat.value} prefix={stat.prefix} suffix={stat.suffix} decimal={stat.decimal} />
+                </div>
+                <span className="text-[12px] font-medium leading-tight text-white/40 mt-0.5">{stat.label}</span>
               </div>
-              <span className="text-[12px] font-medium leading-tight text-white/40 mt-0.5">Keep only with a real, defensible number</span>
-            </div>
-
-            <div className="flex flex-col gap-1 rounded-[14px] border border-white/[0.08] bg-white/[0.04] px-5.5 py-4 backdrop-blur-[10px] transition-all duration-200 hover:bg-white/[0.06] hover:border-white/[0.12] hover:-translate-y-0.5">
-              <div className="flex items-baseline gap-0.5 font-bold tracking-tight text-white text-[26px] leading-none">
-                <AnimatedCounter target={534} prefix="$" suffix="K/mo" />
-              </div>
-              <span className="text-[12px] font-medium leading-tight text-white/40 mt-0.5">Projected monthly impact (at full rollout)</span>
-            </div>
-
-            <div className="col-span-2 sm:col-span-1 flex flex-col gap-1 rounded-[14px] border border-white/[0.08] bg-white/[0.04] px-5.5 py-4 backdrop-blur-[10px] transition-all duration-200 hover:bg-white/[0.06] hover:border-white/[0.12] hover:-translate-y-0.5">
-              <div className="flex items-baseline gap-0.5 font-bold tracking-tight text-white text-[26px] leading-none">
-                <AnimatedCounter target={23.0} suffix="%+" decimal={true} />
-              </div>
-              <span className="text-[12px] font-medium leading-tight text-white/40 mt-0.5">[+X]% CVR • [X]% confidence</span>
-            </div>
+            ))}
           </div>
 
         </div>
@@ -191,24 +183,17 @@ export default function SalesHero() {
               {/* Card Header */}
               <div className="flex items-center justify-between mb-5">
                 <div>
-                  <div className="text-[11px] font-bold tracking-widest uppercase text-white/40 mb-1">What You Get</div>
-                  <div className="text-[16px] font-extrabold text-white">Revenue Leak Diagnostic</div>
+                  <div className="text-[11px] font-bold tracking-widest uppercase text-white/40 mb-1">{content.card_eyebrow}</div>
+                  <div className="text-[16px] font-extrabold text-white">{content.card_title}</div>
                 </div>
                 <div className="rounded-[8px] border border-[#FF707C]/30 bg-[#FF707C]/10 px-3 py-1.25 text-[11px] font-bold text-[#FF707C]">
-                  delivered in 10 business days
+                  {content.card_badge}
                 </div>
               </div>
 
               {/* Deliverables List */}
               <div className="flex flex-col gap-2 mb-5">
-                {[
-                  'Funnel model from your GA4 + Shopify data',
-                  'Clarity behavioral analysis',
-                  'Unit economics & profit-lever review',
-                  'Traffic-feasibility verdict',
-                  'Ranked 90-day test roadmap',
-                  '60-min walkthrough call',
-                ].map((item) => (
+                {content.card_items.map((item) => (
                   <div
                     key={item}
                     className="flex items-center gap-2.5 rounded-[10px] border border-white/[0.06] bg-white/[0.04] px-3.25 py-2.25"

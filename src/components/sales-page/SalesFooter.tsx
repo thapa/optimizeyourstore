@@ -3,6 +3,7 @@
 import Link from "next/link";
 import GrainOverlay from "../ui/GrainOverlay";
 import { useModal } from "@/context/ModalContext";
+import site from "@/content/site.json";
 
 export default function SalesFooter() {
   const { openModal } = useModal();
@@ -26,7 +27,7 @@ export default function SalesFooter() {
             </span>
             
             <p className="text-white/70 text-[14px] leading-relaxed max-w-[280px] font-sans">
-              Conversion rate optimization and growth strategy for high-growth Shopify and Shopify Plus brands.
+              {site.footer_tagline}
             </p>
           </div>
 
@@ -92,10 +93,10 @@ export default function SalesFooter() {
                 Book a Call
               </button>
               <a 
-                href="mailto:hello@convertiqx.com" 
+                href={`mailto:${site.email}`}
                 className="text-white/70 hover:text-[#FF707C] text-[14px] font-medium transition-colors duration-200"
               >
-                hello@convertiqx.com
+                {site.email}
               </a>
             </div>
             
@@ -103,7 +104,7 @@ export default function SalesFooter() {
             <div className="flex flex-row items-center gap-3 pt-4">
               {/* LinkedIn */}
               <a 
-                href="https://www.linkedin.com/in/arun-kumar786/" 
+                href={site.linkedin_url}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-8 h-8 flex items-center justify-center border border-white/12 rounded-full text-white/50 hover:text-[#FF707C] hover:border-[#FF707C]/30 transition-all duration-200" 
@@ -116,7 +117,7 @@ export default function SalesFooter() {
 
               {/* X / Twitter */}
               <a 
-                href="https://x.com/iam_arun06" 
+                href={site.x_url}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-8 h-8 flex items-center justify-center border border-white/12 rounded-full text-white/50 hover:text-[#FF707C] hover:border-[#FF707C]/30 transition-all duration-200" 
@@ -137,10 +138,10 @@ export default function SalesFooter() {
           
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-left">
             <span className="text-white/40 text-[13px] font-sans font-medium">
-              © 2026 ConvertiqX. All rights reserved.
+              {site.footer_copyright}
             </span>
             <span className="text-white/40 text-[13px] font-sans font-medium">
-              Built for D2C Shopify & Shopify Plus Brands
+              {site.footer_note}
             </span>
           </div>
         </div>

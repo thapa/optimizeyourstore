@@ -2,70 +2,13 @@
 
 import { useRef, MouseEvent } from 'react';
 import { useModal } from '@/context/ModalContext';
+import Lines from '../ui/Lines';
+import content from '@/content/pricing.json';
 
-interface Feature {
-  bold?: string;
-  text: string;
-}
-
-interface PriceCard {
-  tier: string;
-  name: string;
-  desc: string;
-  amount: string;
-  currency?: string;
-  period: string;
-  note: string;
-  features: Feature[];
-  ctaLabel: string;
-  ctaLink: string;
-  featured?: boolean;
-  isCustomAmount?: boolean;
-}
+type PriceCard = (typeof content.plans)[number];
 
 export default function SalesPricing() {
   const { openModal } = useModal();
-
-  const auditCard: PriceCard = {
-    tier: "CRO Strategy Audit",
-    name: "Revenue Leak Diagnostic",
-    desc: "A comprehensive deep-dive into your store ecosystem to map out and prioritize every conversion leak.",
-    amount: "1,497",
-    currency: "$",
-    period: "one-time project",
-    note: "Delivered within 10 business days",
-    ctaLabel: "Get My Diagnostic",
-    ctaLink: "#",
-    features: [
-      { text: "Funnel model from your GA4 + Shopify data" },
-      { text: "Clarity behavioral analysis" },
-      { text: "Unit economics & profit-lever review" },
-      { text: "Traffic-feasibility verdict" },
-      { text: "Ranked 90-day test roadmap" },
-      { text: "60-min walkthrough call" },
-    ]
-  };
-
-  const retainerCard: PriceCard = {
-    tier: "CRO Retainer",
-    name: "Growth Retainer",
-    desc: "A fully managed ongoing testing and optimization program for high-growth Shopify brands.",
-    amount: "Scoped on Call",
-    isCustomAmount: true,
-    period: "monthly retainer",
-    note: "3-month minimum engagement",
-    ctaLabel: "Apply for the Retainer",
-    ctaLink: "#",
-    featured: true,
-    features: [
-      { text: "Test cadence set by your traffic and MDE — calculated in the Diagnostic" },
-      { text: "End-to-end execution (design, copy, custom dev)" },
-      { text: "Bi-weekly strategy review & planning calls" },
-      { text: "Shopify Plus checkout & flow optimization" },
-      { text: "Priority Slack access (same-day response)" },
-      { text: "Winners shipped permanently. Every test documented." },
-    ]
-  };
 
   // Mouse tilt animation in React
   const TiltCard = ({ card }: { card: PriceCard }) => {
@@ -118,7 +61,7 @@ export default function SalesPricing() {
       >
         {card.featured && (
           <div className="absolute top-0 right-1/2 translate-x-1/2 -translate-y-1/2 rounded-full bg-[#FF707C] px-3.5 py-1 text-[11px] font-bold uppercase tracking-wider text-white">
-            Most Popular
+            {content.featured_badge}
           </div>
         )}
 
@@ -136,13 +79,13 @@ export default function SalesPricing() {
         <p className={`text-[14px] leading-relaxed mb-6 font-medium ${
           card.featured ? "text-white/60" : "text-[#11100F]/65"
         }`}>
-          {card.desc}
+          {card.description}
         </p>
 
         <div className="flex items-baseline gap-1.5 mb-2 mt-auto">
-          {!card.isCustomAmount && <span className="text-[28px] font-extrabold">{card.currency}</span>}
+          {!card.custom_amount && <span className="text-[28px] font-extrabold">{card.currency}</span>}
           <span className={`text-[clamp(32px,4.5vw,52px)] font-extrabold tracking-tight leading-none ${
-            card.isCustomAmount ? "text-[38px] tracking-normal" : ""
+            card.custom_amount ? "text-[38px] tracking-normal" : ""
           }`}>
             {card.amount}
           </span>
@@ -176,8 +119,7 @@ export default function SalesPricing() {
               <span className={`text-[14px] leading-relaxed font-medium ${
                 card.featured ? "text-white/80" : "text-[#11100F]/75"
               }`}>
-                {feat.bold ? <strong>{feat.bold} </strong> : null}
-                {feat.text}
+                {feat}
               </span>
             </li>
           ))}
@@ -193,7 +135,7 @@ export default function SalesPricing() {
                 : "bg-transparent border border-[#11100F]/25 text-[#11100F] hover:bg-[#11100F]/5"
             }`}
           >
-            {card.ctaLabel}
+            {card.cta}
           </button>
           {card.featured && (
             <div className="absolute -bottom-1 -right-1 h-1 w-1 rounded-[1px] bg-white/70" />
@@ -214,7 +156,7 @@ export default function SalesPricing() {
         <div className="mx-auto max-w-2xl mb-12 flex justify-center">
           <div className="inline-flex items-center gap-3 rounded-2xl border border-green-600/15 bg-green-600/[0.03] p-4 text-[13px] sm:text-[14px] font-semibold text-green-800 shadow-[0_1px_2px_rgba(0,0,0,0.02)] leading-relaxed max-w-[580px] text-center justify-center font-sans">
             <span className="text-[18px] shrink-0">🛡️</span>
-            <span>If we can't show you a leak sized in dollars from your own data, full refund.</span>
+            <span>{content.guarantee}</span>
           </div>
         </div>
 
@@ -224,13 +166,13 @@ export default function SalesPricing() {
             className="mb-4 text-[14px] font-medium uppercase tracking-[0.08em]"
             style={{ color: "#FF707C", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
           >
-            Transparent Pricing
+            {content.eyebrow}
           </p>
           <h2
             className="mx-auto max-w-[48rem] text-[clamp(2rem,4vw,3.5rem)] font-semibold leading-[1.2] tracking-[-0.025em] text-[#11100F]"
             style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
           >
-            Investment That<br />Pays for Itself
+            <Lines text={content.headline} />
           </h2>
           <p
             className="mx-auto mt-6 max-w-2xl text-[14px] font-medium leading-[22px]"
@@ -239,7 +181,7 @@ export default function SalesPricing() {
               fontFamily: "'Plus Jakarta Sans', sans-serif",
             }}
           >
-            Choose the service that fits where you are. Start with a strategy consultation or go straight into a full CRO retainer.
+            {content.intro}
           </p>
           <p
             className="mx-auto mt-4 max-w-2xl text-[15px] font-extrabold leading-[22px] text-[#ff5c6a]"
@@ -247,19 +189,18 @@ export default function SalesPricing() {
               fontFamily: "'Plus Jakarta Sans', sans-serif",
             }}
           >
-            Start with the Diagnostic. Move to the retainer within 30 days and the full $1,497 is credited.
+            {content.price_anchor}
           </p>
         </div>
 
         {/* Cards Grid (Simplified 2-card layout) */}
         <div className="mx-auto w-full">
           <div className="mx-auto max-w-[820px] grid grid-cols-1 md:grid-cols-2 gap-8 justify-center items-stretch">
-            <div>
-              <TiltCard card={auditCard} />
-            </div>
-            <div>
-              <TiltCard card={retainerCard} />
-            </div>
+            {content.plans.map((plan, idx) => (
+              <div key={idx}>
+                <TiltCard card={plan} />
+              </div>
+            ))}
           </div>
         </div>
 

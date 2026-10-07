@@ -1,0 +1,32 @@
+{
+  "eyebrow": "Our Process",
+  "headline": "From Audit to\nRevenue Growth",
+  "intro": "A clear, systematic process that turns data into decisions and decisions into revenue — every single month.",
+  "cta": "Get My Revenue Leak Diagnostic →",
+  "steps": [
+    {
+      "title": "Audit & Research",
+      "duration": "Days 1–7",
+      "description": "We dig deep into your analytics, heatmaps, session recordings, and customer feedback to find every revenue leak in your store.",
+      "deliverables": ["analytics audit", "heatmaps report", "research logs"]
+    },
+    {
+      "title": "Strategy & Hypotheses",
+      "duration": "Days 8–10",
+      "description": "We build a prioritised test backlog using our ICE framework — Impact, Confidence, Ease — so we always run the highest-value tests first.",
+      "deliverables": ["ICE test backlog", "wireframes", "UX roadmap"]
+    },
+    {
+      "title": "Test & Iterate",
+      "duration": "Ongoing sprints",
+      "description": "Tests are designed, built, QA'd, and launched on your Shopify store. Each test runs to a pre-set sample size and decision rule — results are real, not peeked.",
+      "deliverables": ["variant setups", "QA sign-off", "live A/B tests"]
+    },
+    {
+      "title": "Analyse & Scale",
+      "duration": "Compounding monthly",
+      "description": "Winners are implemented permanently. Losers teach us something new. Every sprint compounds on the last — revenue grows month over month.",
+      "deliverables": ["performance analysis", "revenue reports", "roadmap updates"]
+    }
+  ]
+}

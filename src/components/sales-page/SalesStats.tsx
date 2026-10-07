@@ -1,6 +1,8 @@
 'use client';
 
 import { useEffect, useState, useRef } from 'react';
+import Lines from '../ui/Lines';
+import content from '@/content/stats.json';
 
 function AnimatedCounter({
   target,
@@ -62,25 +64,6 @@ function AnimatedCounter({
 }
 
 export default function SalesStats() {
-  const stats = [
-    {
-      num: <AnimatedCounter target={23} suffix="%+" />,
-      label: "Highest CVR lift from a single A/B test"
-    },
-    {
-      num: <AnimatedCounter target={534} prefix="$" suffix="K" />,
-      label: "[X] A/B tests run"
-    },
-    {
-      num: <AnimatedCounter target={47} suffix="+" />,
-      label: "Shopify & Shopify Plus stores audited"
-    },
-    {
-      num: <AnimatedCounter target={99} suffix="%" />,
-      label: "Statistical confidence on our best-performing test"
-    }
-  ];
-
   return (
     <section 
       id="results" 
@@ -91,29 +74,28 @@ export default function SalesStats() {
         {/* Section Header */}
         <div className="flex flex-col text-left mb-16 max-w-2xl">
           <p className="text-[#FF707C] text-sm font-medium tracking-[0.08em] uppercase mb-3">
-            Proven Results
+            {content.eyebrow}
           </p>
           <h2 
             className="text-white font-semibold tracking-[-0.025em] text-[clamp(2rem,4vw,3.5rem)] leading-[1.2] mb-4"
             style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
           >
-            Numbers That<br />
-            Actually Mean Something
+            <Lines text={content.headline} />
           </h2>
           <p className="text-white/65 text-base font-medium leading-6">
-            We don't report impressions or clicks. We report CVR, AOV, RPV and profit per session — not impressions or clicks.
+            {content.intro}
           </p>
         </div>
 
         {/* Stats Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
-          {stats.map((stat, idx) => (
+          {content.stats.map((stat, idx) => (
             <div
               key={idx}
               className="bg-white/[0.04] border border-white/[0.08] rounded-[24px] backdrop-blur-[24px] p-8 text-center transition-all duration-300 hover:bg-white/[0.06] hover:border-white/[0.12] hover:translate-y-[-4px]"
             >
               <div className="text-[44px] font-extrabold tracking-[-0.04em] mb-3 text-white leading-none bg-gradient-to-r from-white to-[#FF707C] bg-clip-text text-transparent inline-block">
-                {stat.num}
+                <AnimatedCounter target={stat.value} prefix={stat.prefix} suffix={stat.suffix} decimal={stat.decimal} />
               </div>
               <p 
                 className="text-[14px] font-medium leading-relaxed text-white/50"

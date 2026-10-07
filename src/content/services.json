@@ -1,0 +1,42 @@
+{
+  "eyebrow": "What We Do",
+  "headline": "Two Services.\nOne Goal: More Revenue.",
+  "intro": "Whether you need a clear strategic roadmap or a full ongoing CRO partnership, we have a model built for your stage.",
+  "service_1": {
+    "label": "Service 01",
+    "title": "Revenue Leak Diagnostic",
+    "description": "A dollar-sized map of where your store loses profit per session — and exactly what to test first.",
+    "items": [
+      { "bold": "", "text": "Funnel model from your GA4 + Shopify data" },
+      { "bold": "", "text": "Clarity behavioral analysis" },
+      { "bold": "", "text": "Unit economics & profit-lever review" },
+      { "bold": "", "text": "Traffic-feasibility verdict" },
+      { "bold": "", "text": "Ranked 90-day test roadmap" },
+      { "bold": "", "text": "60-min walkthrough call" }
+    ],
+    "cta": "View Pricing",
+    "sample_finding": "Checkout abandonment at 78% — primary CTA above the fold is competing with 3 other CTAs."
+  },
+  "service_2": {
+    "label": "Service 02",
+    "title": "CRO & A/B Testing for D2C Shopify & Shopify Plus Brands",
+    "description": "A fully managed, data-driven CRO programme for D2C Shopify and Shopify Plus brands. We research, design, run, and analyse experiments every month — you see the lift in conversion rate, AOV and revenue per visitor.",
+    "items": [
+      { "bold": "Ongoing CRO Audit", "text": " — Continuous monitoring and new opportunity identification" },
+      { "bold": "ICE-Scored Hypothesis Bank", "text": " — Research-backed, prioritised test backlog" },
+      { "bold": "Full Test Design & Implementation", "text": " — We build, QA, and launch every test" },
+      { "bold": "Statistical Analysis & Reporting", "text": " — Full test reports with actionable insights" },
+      { "bold": "Monthly Strategy Calls", "text": " — Review results, plan next sprint, align on goals" },
+      { "bold": "Shopify Plus", "text": " — Checkout Extensibility, Shopify Functions, custom flows (Scripts are deprecated)" }
+    ],
+    "cta": "View Pricing",
+    "control_cvr": "5.15%",
+    "variant_cvr": "6.21%",
+    "cvr_lift": "+20.57%",
+    "control_aov": "$55.29",
+    "variant_aov": "$60.20",
+    "aov_lift": "+8.89%",
+    "rpv_lift": "+31.29%",
+    "projected_impact": "+$159,858/mo"
+  }
+}

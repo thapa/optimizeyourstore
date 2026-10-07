@@ -1,0 +1,23 @@
+{
+  "eyebrow": "The Revenue Problem",
+  "headline": "You don't have a traffic problem.\nYou have a session economics problem.",
+  "intro": "Most ecommerce brands pour budget into paid traffic while ignoring the silent conversion killers on their own store — Cut, or cite a source you can defend.",
+  "problems": [
+    {
+      "title": "You're paying for sessions that don't pay you back. Every visitor you buy has a cost",
+      "description": "your store can't convert them profitably, more ad spend just scales the loss."
+    },
+    {
+      "title": "Your funnel has hidden drop-off points",
+      "description": "Most brands don't know where exactly they're losing customers — product page? Cart? Checkout? A funnel audit reveals the exact points bleeding your revenue."
+    },
+    {
+      "title": "Your copy doesn't close the sale",
+      "description": "Weak headlines, unclear value props, and misaligned CTAs silently kill conversions. A copy audit rewrites the moments that matter most to your buyer journey."
+    },
+    {
+      "title": "You're guessing instead of testing. Changes shipped on gut feel can quietly cost you revenue",
+      "description": "and you'd never know which ones did."
+    }
+  ]
+}

@@ -1,34 +1,9 @@
 'use client';
 
-interface Review {
-  quote: string;
-  name: string;
-  role: string;
-  initials: string;
-}
+import Lines from '../ui/Lines';
+import content from '@/content/testimonials.json';
 
 export default function SalesReviews() {
-  const reviews: Review[] = [
-    {
-      quote: "Within 60 days of the full strategy audit, our checkout conversion rate went from 2.3% to 4.1%. The funnel audit alone paid for the service 10× over. I wish we'd done this two years ago.",
-      name: "Sarah M.",
-      role: "Founder, DTC Skincare Brand · Shopify Plus · $1M–$5M brand",
-      initials: "S"
-    },
-    {
-      quote: "We were spending $40k/month on Facebook ads and barely breaking even. After the CRO retainer, we went from 1.4% to 3.2% CVR — same ad spend, 2.3× the revenue. Genuinely game-changing.",
-      name: "James R.",
-      role: "CMO, Health & Supplements · Shopify Plus · $40k/mo ad spend",
-      initials: "J"
-    },
-    {
-      quote: "The copy audit completely changed how we communicate our product. New headlines, new CTA structure, new product descriptions — AOV jumped 28% in the first month after implementation.",
-      name: "Kavya P.",
-      role: "Director of Ecommerce, Fashion Brand · Shopify Plus",
-      initials: "K"
-    }
-  ];
-
   return (
     <section 
       id="testimonials" 
@@ -39,20 +14,19 @@ export default function SalesReviews() {
         {/* Section Header */}
         <div className="flex flex-col items-center text-center max-w-2xl mx-auto mb-16">
           <p className="text-[#FF707C] text-sm font-medium tracking-[0.08em] uppercase mb-3">
-            Client Results
+            {content.eyebrow}
           </p>
           <h2 
             className="text-[#11100F] font-semibold tracking-[-0.025em] text-[clamp(2rem,4vw,3.5rem)] leading-[1.2] mb-4"
             style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
           >
-            Brands That Trusted<br />
-            the Process
+            <Lines text={content.headline} />
           </h2>
         </div>
 
         {/* Testimonials Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-          {reviews.map((review, idx) => (
+          {content.reviews.map((review, idx) => (
             <div
               key={idx}
               className="bg-white border border-[rgba(17,16,15,0.08)] rounded-[24px] shadow-[0_1px_2px_rgba(17,16,15,0.04),0_8px_24px_-12px_rgba(17,16,15,0.08)] p-8 md:p-10 transition-all duration-300 hover:translate-y-[-4px] hover:border-[rgba(17,16,15,0.16)] hover:shadow-[0_1px_2px_rgba(17,16,15,0.04),0_16px_32px_-12px_rgba(17,16,15,0.12)] flex flex-col justify-between"
@@ -77,7 +51,7 @@ export default function SalesReviews() {
               {/* Author */}
               <div className="flex items-center gap-4 mt-auto">
                 <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#FF707C] to-[#0E0B0D] flex items-center justify-center font-extrabold text-[13px] text-white shrink-0">
-                  {review.initials}
+                  {review.name.charAt(0)}
                 </div>
                 
                 <div className="flex flex-col text-left">

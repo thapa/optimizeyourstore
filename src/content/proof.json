@@ -1,0 +1,79 @@
+{
+  "eyebrow": "Real Client Results",
+  "headline": "Not Simulations.",
+  "headline_accent": "Real Test Data.",
+  "intro": "Every one of these results is from a live A/B test run for a real D2C Shopify brand. Click any card to see the full dashboard screenshot.",
+  "projected_label": "+$X • [tool] • [X]% confidence",
+  "tests": [
+    {
+      "label": "Test 01 · CVR Win",
+      "metric": "+3.94%",
+      "sub": "Conversion Rate Lift",
+      "rpv": "+5.46%",
+      "monthly": "+$39,856",
+      "best": false,
+      "confidence": "",
+      "image": "/test-results/image-1781690224316.webp",
+      "caption": "Test 01 — CVR +3.94% · Revenue/Visitor +5.46% · Est. +$39,856/mo additional revenue"
+    },
+    {
+      "label": "Test 02 · Multi-Variant",
+      "metric": "+5.57%",
+      "sub": "Conversion Rate Lift",
+      "rpv": "+6.09%",
+      "monthly": "+$43,984",
+      "best": false,
+      "confidence": "",
+      "image": "/test-results/image-1781690232893.webp",
+      "caption": "Test 02 — CVR +5.57% · Multi-variant · Revenue/Visitor +6.09% · Est. +$43,984/mo"
+    },
+    {
+      "label": "Test 03 · Best Result",
+      "metric": "+14.56%",
+      "sub": "Conversion Rate Lift",
+      "rpv": "+18.54%",
+      "monthly": "+$192,130",
+      "best": true,
+      "confidence": "",
+      "image": "/test-results/image-1781690239021.webp",
+      "caption": "Test 03 — CVR +14.56% · Revenue/Visitor +18.54% · Est. +$192,130/mo additional revenue"
+    },
+    {
+      "label": "Test 04 · CVR Win",
+      "metric": "+5.99%",
+      "sub": "Conversion Rate Lift",
+      "rpv": "+9.58%",
+      "monthly": "+$66,152",
+      "best": false,
+      "confidence": "",
+      "image": "/test-results/image-1781690244420.webp",
+      "caption": "Test 04 — CVR +5.99% · Revenue/Visitor +9.58% · Est. +$66,152/mo additional revenue"
+    },
+    {
+      "label": "Test 05 · Checkout Win",
+      "metric": "+20.57%",
+      "sub": "Conversion Rate Lift",
+      "rpv": "+31.29%",
+      "monthly": "+$159,858",
+      "best": false,
+      "confidence": "",
+      "image": "/test-results/image-1781690249168.webp",
+      "caption": "Test 05 — CVR +20.57% · Revenue/Visitor +31.29% · AOV +8.89% · Est. +$159,858/mo"
+    },
+    {
+      "label": "Test 06 · 99% Confidence",
+      "metric": "+23.57%",
+      "sub": "Conversion Rate Lift",
+      "rpv": "+29.56%",
+      "monthly": "+$32,222",
+      "best": false,
+      "confidence": "99%",
+      "image": "/test-results/image-1781691640951.png",
+      "caption": "Test 06 — CVR +23.57% · Revenue/Visitor +29.56% · AOV +4.84% · 99% Statistical Confidence · Est. +$32,222/mo"
+    }
+  ],
+  "banner_eyebrow": "Across these 6 real tests",
+  "banner_amount": "$534,000",
+  "banner_text": "Combined projected monthly impact across 6 live tests, if each winner runs at full traffic: $[X]",
+  "banner_cta": "Find My Store's Leaks"
+}

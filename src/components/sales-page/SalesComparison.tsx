@@ -1,25 +1,10 @@
 'use client';
 
 import { useRef } from 'react';
+import content from '@/content/comparison.json';
 
 export default function SalesComparison() {
   const containerRef = useRef<HTMLDivElement>(null);
-
-  const oldWayItems = [
-    <>Launching new pages based on "gut-feel" and <strong>praying they work</strong></>,
-    <>Scaling a winner, watching ROAS drop, and <strong>pulling the spend back</strong></>,
-    <>Hiring agencies that send vanity reports while your <strong>net profit drops</strong></>,
-    <>Stacking buggy third-party Shopify apps that <strong>bloat your site speed</strong></>,
-    <>Watching visitors drop off at checkout and <strong>not knowing why</strong></>
-  ];
-
-  const newWayItems = [
-    <>Launching store variants backed by <strong>real customer click and behavior data</strong></>,
-    <>A store that converts paid traffic at a <strong>higher profit per session</strong></>,
-    <>Keep only if the retainer has a margin-linked component. Otherwise: Partnering with specialists who report on profit per session, <strong>not vanity metrics.</strong></>,
-    <>Custom, lightweight code that keeps your <strong>checkout lightning fast</strong></>,
-    <>Knowing the exact bottleneck of your store and <strong>fixing it systematically</strong></>
-  ];
 
   return (
     <section
@@ -49,20 +34,20 @@ export default function SalesComparison() {
             className="mb-4 text-[13px] font-bold uppercase tracking-[0.10em] text-[#FF707C]"
             style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
           >
-            The Shift
+            {content.eyebrow}
           </p>
           <h2
             className="mx-auto max-w-[70rem] text-white text-[clamp(2rem,4vw,3.5rem)] font-semibold leading-[1.15] tracking-[-0.025em]"
             style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
           >
-            The brands that scale don't buy more clicks.<br />
-            <span className="text-[#FF707C]">They earn more per click.</span>
+            {content.headline}<br />
+            <span className="text-[#FF707C]">{content.headline_accent}</span>
           </h2>
           <p
             className="mx-auto mt-6 max-w-2xl text-[14px] md:text-[15px] font-medium leading-[24px] text-white/50"
             style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
           >
-            Doubling your budget won't save a store that leaks revenue. The most successful Shopify brands don't scale by simply buying more clicks—they scale because they make more money from the traffic they already have.
+            {content.intro}
           </p>
         </div>
 
@@ -75,17 +60,17 @@ export default function SalesComparison() {
               className="text-[#ff5c6a] font-bold tracking-[-0.01em] text-[20px] text-center mb-8 pb-5 border-b border-white/[0.06]"
               style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
             >
-              The old way
+              {content.old_way_title}
             </h3>
 
             <div className="flex flex-col gap-6.5 my-auto">
-              {oldWayItems.map((item, idx) => (
+              {content.old_way.map((item, idx) => (
                 <div key={idx} className="flex items-start gap-4">
                   <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-red-500/10 text-[#ff5c6a] text-[10px] font-bold mt-0.5 border border-red-500/20">
                     ✕
                   </span>
                   <p className="text-[14px] md:text-[15px] font-medium leading-[22px] text-white/70">
-                    {item}
+                    {item.text}<strong>{item.bold}</strong>
                   </p>
                 </div>
               ))}
@@ -103,17 +88,17 @@ export default function SalesComparison() {
               className="text-[#4ade80] font-bold tracking-[-0.01em] text-[20px] text-center mb-8 pb-5 border-b border-white/[0.06]"
               style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
             >
-              The new way
+              {content.new_way_title}
             </h3>
 
             <div className="flex flex-col gap-6.5 my-auto">
-              {newWayItems.map((item, idx) => (
+              {content.new_way.map((item, idx) => (
                 <div key={idx} className="flex items-start gap-4">
                   <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-green-500/10 text-[#4ade80] text-[10px] font-bold mt-0.5 border border-green-500/20">
                     ✓
                   </span>
                   <p className="text-[14px] md:text-[15px] font-medium leading-[22px] text-white/80">
-                    {item}
+                    {item.text}<strong>{item.bold}</strong>
                   </p>
                 </div>
               ))}
@@ -137,7 +122,7 @@ export default function SalesComparison() {
               className="text-white text-[15px] md:text-[17px] font-semibold leading-[28px] max-w-[800px] mx-auto relative z-10"
               style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
             >
-              If that sounds familiar, it is not because you are doing something wrong as a founder. It is because you have been trying to fix the traffic layer, when the actual leak is your store.
+              {content.callout}
             </p>
           </div>
         </div>

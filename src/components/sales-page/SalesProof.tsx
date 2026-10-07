@@ -2,82 +2,14 @@
 
 import { useState, useEffect } from 'react';
 import { useModal } from '@/context/ModalContext';
-
-interface ProofHighlight {
-  label: string;
-  metric: string;
-  sub: string;
-  rpv: string;
-  monthly: string;
-  best?: boolean;
-  confidence?: string;
-  src: string;
-  caption: string;
-}
+import content from '@/content/proof.json';
 
 export default function SalesProof() {
   const { openModal } = useModal();
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
   const [imgErrors, setImgErrors] = useState<Record<number, boolean>>({});
 
-  const highlights: ProofHighlight[] = [
-    {
-      label: "Test 01 · CVR Win",
-      metric: "+3.94%",
-      sub: "Conversion Rate Lift",
-      rpv: "+5.46%",
-      monthly: "+$39,856",
-      src: "/test-results/image-1781690224316.webp",
-      caption: "Test 01 — CVR +3.94% · Revenue/Visitor +5.46% · Est. +$39,856/mo additional revenue"
-    },
-    {
-      label: "Test 02 · Multi-Variant",
-      metric: "+5.57%",
-      sub: "Conversion Rate Lift",
-      rpv: "+6.09%",
-      monthly: "+$43,984",
-      src: "/test-results/image-1781690232893.webp",
-      caption: "Test 02 — CVR +5.57% · Multi-variant · Revenue/Visitor +6.09% · Est. +$43,984/mo"
-    },
-    {
-      label: "Test 03 · Best Result",
-      metric: "+14.56%",
-      sub: "Conversion Rate Lift",
-      rpv: "+18.54%",
-      monthly: "+$192,130",
-      best: true,
-      src: "/test-results/image-1781690239021.webp",
-      caption: "Test 03 — CVR +14.56% · Revenue/Visitor +18.54% · Est. +$192,130/mo additional revenue"
-    },
-    {
-      label: "Test 04 · CVR Win",
-      metric: "+5.99%",
-      sub: "Conversion Rate Lift",
-      rpv: "+9.58%",
-      monthly: "+$66,152",
-      src: "/test-results/image-1781690244420.webp",
-      caption: "Test 04 — CVR +5.99% · Revenue/Visitor +9.58% · Est. +$66,152/mo additional revenue"
-    },
-    {
-      label: "Test 05 · Checkout Win",
-      metric: "+20.57%",
-      sub: "Conversion Rate Lift",
-      rpv: "+31.29%",
-      monthly: "+$159,858",
-      src: "/test-results/image-1781690249168.webp",
-      caption: "Test 05 — CVR +20.57% · Revenue/Visitor +31.29% · AOV +8.89% · Est. +$159,858/mo"
-    },
-    {
-      label: "Test 06 · 99% Confidence",
-      metric: "+23.57%",
-      sub: "Conversion Rate Lift",
-      rpv: "+29.56%",
-      monthly: "+$32,222",
-      confidence: "99%",
-      src: "/test-results/image-1781691640951.png",
-      caption: "Test 06 — CVR +23.57% · Revenue/Visitor +29.56% · AOV +4.84% · 99% Statistical Confidence · Est. +$32,222/mo"
-    }
-  ];
+  const highlights = content.tests;
 
   // Keypress event handler for lightbox navigation
   useEffect(() => {
@@ -112,17 +44,17 @@ export default function SalesProof() {
         {/* Header Block */}
         <div className="flex flex-col text-left mb-16 max-w-2xl">
           <p className="text-[#FF707C] text-sm font-medium tracking-[0.08em] uppercase mb-3">
-            Real Client Results
+            {content.eyebrow}
           </p>
           <h2 
             className="text-white font-semibold tracking-[-0.025em] text-[clamp(2rem,4vw,3.5rem)] leading-[1.2] mb-4"
             style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
           >
-            Not Simulations.<br />
-            <span className="text-gradient">Real Test Data.</span>
+            {content.headline}<br />
+            <span className="text-gradient">{content.headline_accent}</span>
           </h2>
           <p className="text-white/65 text-base font-medium leading-6">
-            Every one of these results is from a live A/B test run for a real D2C Shopify brand. Click any card to see the full dashboard screenshot.
+            {content.intro}
           </p>
         </div>
 
@@ -164,7 +96,7 @@ export default function SalesProof() {
                 </div>
                 <div className="flex justify-between items-center text-[12px]">
                   <span className="text-white/40">Projected/mo</span>
-                  <span className="text-[#FF707C] font-bold">+$X • [tool] • [X]% confidence</span>
+                  <span className="text-[#FF707C] font-bold">{content.projected_label}</span>
                   {/* <span className="text-[#FF707C] font-bold">{item.monthly}</span> */}
                 </div>
               </div>
@@ -190,7 +122,7 @@ export default function SalesProof() {
                   </div>
                 ) : (
                   <img
-                    src={item.src}
+                    src={item.image}
                     alt={item.caption}
                     onError={() => setImgErrors(prev => ({ ...prev, [idx]: true }))}
                     className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
@@ -232,9 +164,9 @@ export default function SalesProof() {
         {/* Estimated Revenue Banner */}
         <div className="mt-16 p-8 md:p-10 bg-gradient-to-r from-[#FF707C]/10 to-white/[0.03] border border-[#FF707C]/15 rounded-[28px] flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
           <div className="flex flex-col text-left">
-            <span className="text-[11px] font-bold uppercase tracking-wider text-white/40 mb-2">Across these 6 real tests</span>
-            <div className="text-[36px] font-extrabold tracking-tight text-white leading-none">$534,000<span className="text-[#FF707C] text-[20px] font-bold">/mo</span></div>
-            <span className="text-[14px] text-white/50 mt-1 font-medium">Combined projected monthly impact across 6 live tests, if each winner runs at full traffic: $[X]</span>
+            <span className="text-[11px] font-bold uppercase tracking-wider text-white/40 mb-2">{content.banner_eyebrow}</span>
+            <div className="text-[36px] font-extrabold tracking-tight text-white leading-none">{content.banner_amount}<span className="text-[#FF707C] text-[20px] font-bold">/mo</span></div>
+            <span className="text-[14px] text-white/50 mt-1 font-medium">{content.banner_text}</span>
           </div>
 
           <div className="relative">
@@ -243,7 +175,7 @@ export default function SalesProof() {
               onClick={openModal}
               className="inline-flex items-center justify-center bg-[#FF707C] text-[#0E0B0D] px-7 py-4 text-[15px] font-semibold rounded-full transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-[1.04] active:scale-[0.98] shadow-lg hover:bg-[#ff5c6a] cursor-pointer"
             >
-              Find My Store's Leaks
+              {content.banner_cta}
               <svg className="ml-2" width="16" height="16" viewBox="0 0 16 16" fill="none">
                 <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
@@ -287,7 +219,7 @@ export default function SalesProof() {
                 </div>
               ) : (
                 <img 
-                  src={highlights[lightboxIndex].src} 
+                  src={highlights[lightboxIndex].image} 
                   alt={highlights[lightboxIndex].caption} 
                   onError={() => setImgErrors(prev => ({ ...prev, [lightboxIndex]: true }))}
                   className="max-h-[72vh] max-w-full object-contain pointer-events-none select-none" 
